@@ -15,36 +15,36 @@ public class Territory : MonoBehaviour
 
     private List<Army> armies;
 
+    private Vector2 startScale;
+
+    private bool positionChanged = false;
+
+    private BoxCollider2D boxCollider;
+
+    private void Awake()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-            
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
+    
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(name + " contatto con " + collision);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log(name + " trigger con " + collision);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(name + " contatto con " + collision);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(name + " trigger con " + collision);
+        Territory neighborTerritory = collider.GetComponent<Territory>();
+        if (neighborTerritory != null && !neighborTerritories.Contains(neighborTerritory))
+        {
+            Debug.Log(name + " confina con " + neighborTerritory.name);
+            neighborTerritories.Add(neighborTerritory);
+        }
     }
 
 
