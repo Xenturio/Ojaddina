@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Territory
+    uniqueID: 4121233315
+    locked: 0
+  - name: UI
+    uniqueID: 349969195
+    locked: 0

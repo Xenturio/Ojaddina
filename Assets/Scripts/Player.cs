@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    private string id;
+    private string name;
 
     private string color;
 
@@ -15,23 +15,19 @@ public class Player : MonoBehaviour
 
     private StateCard[] stateCards;
 
+    private List<Territory> territoriesOwned;
 
-
-    public Player(string id, string color, int soldiers)
-    {
-        this.Id = id;
-        this.Color = color;
-        this.Soldiers = soldiers;
+    public void AddTerritory(Territory newTerritory) {
+        territoriesOwned.Add(newTerritory);
     }
 
-    public string Id { get => id; set => id = value; }
-    public string Color { get => color; set => color = value; }
-    public int Soldiers { get => soldiers; set => soldiers = value; }
-    public TargetCard TargetCard { get => targetCard; set => targetCard = value; }
-    public StateCard[] StateCards { get => stateCards; set => stateCards = value; }
+    public void LostTerritory(Territory lostTerritory) {
+        territoriesOwned.Remove(lostTerritory);
+    }
 
-
-
+    public void SetTargetCard(TargetCard targetCard) {
+        this.targetCard = targetCard;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +38,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void CalcReinforcmentArmies() {
+
+
+
     }
 }
