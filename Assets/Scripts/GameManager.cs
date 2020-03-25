@@ -17,38 +17,49 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         players = new List<Player>(FindObjectsOfType<Player>());
-        DistributeTerritories();
-        DistributeTargetCard();
+        SetupMatch();
         currentState = TurnStateEnum.REINFORCE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void DistributeTerritories() {
+    private void SetupMatch()
+    {
+        PickUpPlayersOrder();
+        RandomizeColorPlayer();
+        SetNextPlayer();
+        DistributeTerritories();
+        DistributeTargetCard();
+        DistributeArmies();
+    }
+
+    private void DistributeTerritories()
+    {
 
         Territory[] allTerritories = FindObjectsOfType<Territory>();
-        List<Territory> randomTerritories = new List<Territory>(allTerritories.Length);
-        foreach (Territory territory in allTerritories) {
-            randomTerritories.Add(territory);
-        }
+        List<Territory> randomTerritories = new List<Territory>(allTerritories);
         randomTerritories.Shuffle();
         var playerIndex = 0;
-        foreach(Territory territory in randomTerritories)
+        foreach (Territory territory in randomTerritories)
         {
-            if (playerIndex == players.Count) {
+            if (playerIndex == players.Count)
+            {
                 playerIndex = 0;
             }
             players[playerIndex].AddTerritory(territory);
+            territory.SetOwner(players[playerIndex]);
             playerIndex++;
         }
     }
 
-    private void DistributeTargetCard() {
-        if (!GameSettings.DOMINATION_MODE) {
+    private void DistributeTargetCard()
+    {
+        if (!GameSettings.DOMINATION_MODE)
+        {
             TargetCard[] allTargetsCard = FindObjectsOfType<TargetCard>();
             List<TargetCard> randomCards = new List<TargetCard>(allTargetsCard.Length);
             foreach (TargetCard card in allTargetsCard)
@@ -58,53 +69,103 @@ public class GameManager : MonoBehaviour
             randomCards.Shuffle();
             var cardIndex = 0;
             foreach (Player player in players)
-                {
-                    player.SetTargetCard(randomCards[cardIndex]);
+            {
+                player.SetTargetCard(randomCards[cardIndex]);
                 cardIndex++;
-                }
-            
+            }
+
         }
     }
 
-    public void AddPlayer(Player player) {
+    private void DistributeArmies()
+    {
+        int startArmies = players.Count == 6 ? 20 : players.Count == 5 ? 25 : players.Count == 4 ? 30 : 35;
+        foreach (Player player in players)
+        {
+            player.AddArmies(startArmies);
+        }
+    }
+
+    private void RandomizeColorPlayer()
+    {
+        if (GameSettings.RANDOMIZE_COLOR_PLAYER)
+        {
+            List<Color> colors = new List<Color>(GameSettings.playerColors);
+            colors.Shuffle();
+            var i = 0;
+            foreach (Player player in players)
+            {
+                player.PickUpColor(colors[i]);
+                i++;
+            }
+        }
+    }
+
+    private void PickUpPlayersOrder()
+    {
+        players.Shuffle();
+    }
+
+    public void SetNextPlayer()
+    {
+        if (this.currentPlayer == null)
+        {
+            this.currentPlayer = players[0];
+        }
+        else
+        {
+            var currentIndex = players.IndexOf(currentPlayer);
+            if (currentIndex == players.Count - 1)
+            {
+                currentPlayer = players[0];
+            }
+            else
+            {
+                currentPlayer = players[currentIndex + 1];
+            }
+        }
+    }
+
+    public void AddPlayer(Player player)
+    {
         players.Add(player);
     }
 
-    public void RemovePlayer(Player player) {
+    public void RemovePlayer(Player player)
+    {
         players.Remove(player);
     }
 
-    public void EndPlayerTurn() {
-        var currentIndex = players.IndexOf(currentPlayer);
-        if (currentIndex == players.Count - 1)
-        {
-            currentPlayer = players[0];
-        }
-        else {
-            currentPlayer = players[currentIndex + 1];
-        }
+    public void EndPlayerTurn()
+    {
+        SetNextPlayer();
         selectedTerritoy = null;
     }
 
-    public Player GetCurrentPlayer() {
+    public Player GetCurrentPlayer()
+    {
         return this.currentPlayer;
     }
 
-    public Territory GetSelectedTerritory() {
+    public Territory GetSelectedTerritory()
+    {
         return this.selectedTerritoy;
     }
 
-    public void SetSelectedTerritory(Territory territory) {
+    public void SetSelectedTerritory(Territory territory)
+    {
         this.selectedTerritoy = territory;
     }
 
-    public TurnStateEnum GetCurrentTurnState() {
+    public TurnStateEnum GetCurrentTurnState()
+    {
         return currentState;
     }
-   
+
 }
 
-static class MyExtensions {
+static class MyExtensions
+{
 
     public static void Shuffle<T>(this IList<T> list)
     {

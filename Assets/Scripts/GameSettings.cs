@@ -12,5 +12,9 @@ public class GameSettings
 
     public static bool DOMINATION_MODE = false;
 
+    public static bool RANDOMIZE_COLOR_PLAYER = true;
+
+    public static Color[] playerColors = { Color.black, Color.blue, Color.green, Color.yellow, Color.red, Color.cyan };
+
 
 }

@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Territory : MonoBehaviour
+public class Territory : MonoBehaviour, UnityEngine.EventSystems.IPointerClickHandler
 {
 
     [SerializeField] string name;
@@ -24,21 +25,27 @@ public class Territory : MonoBehaviour
 
     private GameManager gameManager;
 
+    private TerritoryTextName textName;
+
+    private TextArmy textArmy;
+
     private void Awake()
     {
         if (string.IsNullOrEmpty(name))
         {
-            name = "Territorio" + this.gameObject.name;
+            name = this.gameObject.name;
         }
-        baseColor = GetComponent<SpriteRenderer>().color;
         gameManager = FindObjectOfType<GameManager>();
         GetComponentInChildren<Text>().text = name;
+        armies = new List<Army>();
+        textName = GetComponentInChildren<TerritoryTextName>();
+        textArmy = GetComponentInChildren<TextArmy>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateArmyDisplay();        
     }
 
     // Update is called once per frame
@@ -46,8 +53,19 @@ public class Territory : MonoBehaviour
     {
     }
 
+    private bool buttonClickSemaphore = false;
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButton(1) && !buttonClickSemaphore)
+        {
+            RemoveArmy();
+            buttonClickSemaphore = true;
+        }
+    }
+
     private void OnMouseDown()
     {
+        Debug.Log("Mouse click");
         HighlightTerritory();
         if (gameManager.GetCurrentTurnState().Equals(TurnStateEnum.REINFORCE))
         {
@@ -64,13 +82,14 @@ public class Territory : MonoBehaviour
         UpdateArmyDisplay();
     }
 
-    public void removeArmy() {
+    public void RemoveArmy() {
         if (this.armies != null && this.armies.Count > 0) {
             this.armies.RemoveAt(0);
             UpdateArmyDisplay();
         }
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Territory neighborTerritory = collider.GetComponent<Territory>();
@@ -80,38 +99,22 @@ public class Territory : MonoBehaviour
             neighborTerritories.Add(neighborTerritory);
         }
     }
+    */
 
 
     public void SetOwner(Player owner) {
         this.owner = owner;
+        textName.SetColorPlayerText();
+        GetComponentInChildren<SpriteRenderer>().color = owner.GetPlayerColor();
     }
 
     private void HighlightTerritory() {
         if (IsSelectableTerritory())
         {
-            Color color = GetComponent<SpriteRenderer>().color;
-            if (color.Equals(highlightedColor))
-            {
-                GetComponent<SpriteRenderer>().color = baseColor;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = highlightedColor;
-            }
-            ResetHighlightTerritory();
             gameManager.SetSelectedTerritory(this);
         }
     }
-
-    private void ResetHighlightTerritory() {
-        foreach (Territory territory in FindObjectsOfType<Territory>()) {
-            if (attackingTerritory.name != territory.name)
-            {
-                territory.GetComponent<SpriteRenderer>().color = territory.baseColor;
-            }
-        }
-    }
-
+    
     private bool IsSelectableTerritory() {
 
         //Un territorio è selezionabile quando è un mio territorio
@@ -148,9 +151,23 @@ public class Territory : MonoBehaviour
     }
 
     private void UpdateArmyDisplay() {
-        Slider armyDisplay = GetComponentInChildren<Slider>();
-        if (armyDisplay != null) {
-            armyDisplay.value = armies.Count;
+        textArmy.UpdateArmyNumber(armies.Count);
+    }
+
+    public Player GetPlayer() {
+        return this.owner;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            AddArmy();
         }
+        else if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            RemoveArmy();
+        }
+            
     }
 }

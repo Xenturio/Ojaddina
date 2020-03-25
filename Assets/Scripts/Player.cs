@@ -7,15 +7,17 @@ public class Player : MonoBehaviour
 
     private string name;
 
-    private string color;
+    private Color color;
 
-    private int soldiers;
+    private int armies = 0;
 
     private TargetCard targetCard;
 
-    private StateCard[] stateCards;
+    private StateCard[] stateCards = new StateCard[] { };
 
-    private List<Territory> territoriesOwned;
+    private List<Territory> territoriesOwned = new List<Territory>();
+
+    private int armiesPerTurn = 1;
 
     public void AddTerritory(Territory newTerritory) {
         territoriesOwned.Add(newTerritory);
@@ -27,6 +29,18 @@ public class Player : MonoBehaviour
 
     public void SetTargetCard(TargetCard targetCard) {
         this.targetCard = targetCard;
+    }
+
+    public int GetArmiesPerTurn() {
+        return this.armiesPerTurn;
+    }
+
+    public void AddArmies(int armies) {
+        this.armies += armies;
+    }
+
+    public void PickUpColor(Color color) {
+        this.color = color;
     }
     // Start is called before the first frame update
     void Start()
@@ -41,8 +55,13 @@ public class Player : MonoBehaviour
     }
 
     private void CalcReinforcmentArmies() {
-
+        //Numero di stati diviso 3
+        var armies = this.territoriesOwned.Count / 3;
 
 
     }
+
+    public Color GetPlayerColor() {
+        return this.color;
+       }
 }
