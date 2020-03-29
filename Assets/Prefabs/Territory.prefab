@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9152046022623359510}
   - component: {fileID: 8571342436504334812}
   - component: {fileID: 586834006172346111}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.14901948, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737331939523567077}
   - component: {fileID: 5821949159784884663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword-r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2379185480826077750}
   m_LocalRotation: {x: 0, y: 0, z: 0.016579883, w: 0.99986255}
-  m_LocalPosition: {x: -452.8, y: -397.1, z: 874.75}
+  m_LocalPosition: {x: -452.8, y: -397.1, z: 0}
   m_LocalScale: {x: 28.543713, y: 27.947054, z: 1}
   m_Children: []
   m_Father: {fileID: 6597319950871356835}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3776316723540755419}
   - component: {fileID: 5308398651628439120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword-l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2441334029313560639}
   m_LocalRotation: {x: 0, y: 0, z: 0.016579883, w: 0.99986255}
-  m_LocalPosition: {x: -452.8, y: -397.1, z: 874.75}
+  m_LocalPosition: {x: -452.8, y: -397.1, z: 0}
   m_LocalScale: {x: 28.543713, y: 27.947054, z: 1}
   m_Children: []
   m_Father: {fileID: 6597319950871356835}
@@ -259,7 +259,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6597319950871356835}
-  m_Layer: 0
+  - component: {fileID: 1752232116}
+  m_Layer: 8
   m_Name: Swords
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2977013085515967105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 363, y: 348, z: -874.75}
+  m_LocalPosition: {x: 363, y: 348, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 3776316723540755419}
@@ -282,6 +283,18 @@ Transform:
   m_Father: {fileID: 4614973844649902153}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752232116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2977013085515967105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c008567729f0ee8469094586deda3760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4614973844440389995
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +307,7 @@ GameObject:
   - component: {fileID: 4614973844440389974}
   - component: {fileID: 4614973844440389993}
   - component: {fileID: 385914337}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Army
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +400,9 @@ GameObject:
   - component: {fileID: 4614973844649902519}
   - component: {fileID: 4614973844649902518}
   - component: {fileID: 8752384}
-  m_Layer: 5
+  - component: {fileID: -4636919712373471706}
+  - component: {fileID: -6480523188259495311}
+  m_Layer: 8
   m_Name: Territory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +417,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4614973844649902152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 393.2506}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4614973844440389992}
@@ -445,7 +460,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6d08429117dc53a4bbdec8f5c7613099, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4a21daece1cf8742be134725d7b7c99, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -467,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -475,17 +490,17 @@ MonoBehaviour:
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9713695, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0.98466897, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d,
+    m_HighlightedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -512,11 +527,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a99423db06ad3498d532d02308a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  continent: 0
+  territoryName: 
+  continent: 5
   neighborTerritories: []
   highlightedColor: {r: 1, g: 1, b: 1, a: 1}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &-4636919712373471706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614973844649902152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d516a59cf1f450949bcc82f214f4ec5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTerritoryText: {fileID: 0}
+  targetTerritoryText: {fileID: 0}
+  arrowFromTo: {fileID: 0}
+  attackMoveBtn: {fileID: 0}
+--- !u!114 &-6480523188259495311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614973844649902152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c008567729f0ee8469094586deda3760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4752671258151038618
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6984651283953228112}
   - component: {fileID: 4763298525965876706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +608,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -582,8 +625,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 349969195
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 6719877630809283541, guid: 24e15465922868e43bef56bef1fd1a1d,
     type: 3}

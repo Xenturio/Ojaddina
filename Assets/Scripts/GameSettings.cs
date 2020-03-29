@@ -14,7 +14,20 @@ public class GameSettings
 
     public static bool RANDOMIZE_COLOR_PLAYER = true;
 
+    public static bool AUTO_START_POSITIONING_ARMY = true;
+
     public static Color[] playerColors = { Color.black, Color.blue, Color.green, Color.yellow, Color.red, Color.cyan };
 
+    public const int ASIA_ARMY = 7;
+
+    public const int AFRIA_ARMY = 3;
+
+    public const int AMERICA_ARMY = 5;
+
+    public const int EUROPE_ARMY = 5;
+
+    public const int SUDAMERICA_ARMY = 2;
+
+    public const int OCEANIA_ARMY = 2;
 
 }

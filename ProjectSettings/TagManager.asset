@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - 
   - Territory
-  - 
+  - AttackMap
   - 
   - 
   - 
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 349969195
+    locked: 0
+  - name: AttackMap
+    uniqueID: 1644047007
     locked: 0

@@ -1,24 +1,55 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private List<Player> players;
+    [SerializeField] Text currentPlayerText;
+    [SerializeField] Text selectedTerritoryText;
+    [SerializeField] Text targetTerritoryText;
+    [SerializeField] Image arrowFromTo;
+    [SerializeField] Button attackMoveBtn;
+    [SerializeField] TextOverlayUI textOverlay;
+
+    private List<PlayerController> players;
 
     private Player currentPlayer;
 
-    private Territory selectedTerritoy;
+    private PlayerController currentPlayerController;
 
-    private TurnStateEnum currentState;
+    private PlayerController selectedDefenderController;
 
+    private TerritoryController selectedTerritoy;
+
+    //Territorio selezionato da attaccare o come destinazione di un movimento
+    private TerritoryController destinationTerritory;
+
+    private TerritoryController[] territories;
+
+    private int allStartArmies = 0;
+
+    
+
+    private LevelLoader levelLoader;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        levelLoader = FindObjectOfType<LevelLoader>();
+        selectedTerritoryText.gameObject.SetActive(false);
+        targetTerritoryText.gameObject.SetActive(false);
+        arrowFromTo.gameObject.SetActive(false);
+        attackMoveBtn.gameObject.SetActive(false);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        players = new List<Player>(FindObjectsOfType<Player>());
+        players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
         SetupMatch();
-        currentState = TurnStateEnum.REINFORCE;
+        StartGame();
     }
 
     // Update is called once per frame
@@ -29,28 +60,54 @@ public class GameManager : MonoBehaviour
 
     private void SetupMatch()
     {
+        //Scelta dell'ordine dei giocatori random
         PickUpPlayersOrder();
+        //Scelta random dei colori solo se configurato
         RandomizeColorPlayer();
+        //Seleziono il primo giocatore
         SetNextPlayer();
+        //Distribuisco le carte territorio
         DistributeTerritories();
+        //Distribuisco le carte obbiettivo
         DistributeTargetCard();
+        //Distribuisco le armate
         DistributeArmies();
+        //Si aggiunge un armata per ogni territorio
+        AddFirstArmyInTerritory();
+        //Inizializza le posizioni 
+        StartPositioning();
+    }
+
+    public void StartPositioning()
+    {
+        GameStatesController.StartGameState();
+        currentPlayerController.CalcReinforcmentArmies();
+        //Dispone automaticamente le armate
+        AutoStartPositioning();
+    }
+
+    public void StartGame()
+    {
+        if (GameStatesController.IsSetupGame()){            
+            GameStatesController.NextState();
+            currentPlayerController.CalcReinforcmentArmies();
+        }
     }
 
     private void DistributeTerritories()
     {
 
-        Territory[] allTerritories = FindObjectsOfType<Territory>();
-        List<Territory> randomTerritories = new List<Territory>(allTerritories);
+        territories = FindObjectsOfType<TerritoryController>();
+        List<TerritoryController> randomTerritories = new List<TerritoryController>(territories);
         randomTerritories.Shuffle();
         var playerIndex = 0;
-        foreach (Territory territory in randomTerritories)
+        foreach (TerritoryController territory in randomTerritories)
         {
             if (playerIndex == players.Count)
             {
                 playerIndex = 0;
             }
-            players[playerIndex].AddTerritory(territory);
+            players[playerIndex].AddTerritory(territory.GetTerritory());
             territory.SetOwner(players[playerIndex]);
             playerIndex++;
         }
@@ -68,7 +125,7 @@ public class GameManager : MonoBehaviour
             }
             randomCards.Shuffle();
             var cardIndex = 0;
-            foreach (Player player in players)
+            foreach (PlayerController player in players)
             {
                 player.SetTargetCard(randomCards[cardIndex]);
                 cardIndex++;
@@ -79,10 +136,21 @@ public class GameManager : MonoBehaviour
 
     private void DistributeArmies()
     {
-        int startArmies = players.Count == 6 ? 20 : players.Count == 5 ? 25 : players.Count == 4 ? 30 : 35;
-        foreach (Player player in players)
+        int startArmies = 20 + ((6 - players.Count) * 5);
+        allStartArmies = startArmies * players.Count;
+        foreach (PlayerController player in players)
         {
             player.AddArmies(startArmies);
+            player.SetStartArmiesCount(startArmies);
+        }
+    }
+
+    private void AddFirstArmyInTerritory()
+    {
+        foreach (TerritoryController territory in territories)
+        {
+            territory.AddArmy();
+            territory.GetTerritory().GetPlayer().SetStartArmiesCount(territory.GetTerritory().GetPlayer().GetStartArmiesCount() - 1);
         }
     }
 
@@ -93,7 +161,7 @@ public class GameManager : MonoBehaviour
             List<Color> colors = new List<Color>(GameSettings.playerColors);
             colors.Shuffle();
             var i = 0;
-            foreach (Player player in players)
+            foreach (PlayerController player in players)
             {
                 player.PickUpColor(colors[i]);
                 i++;
@@ -108,38 +176,74 @@ public class GameManager : MonoBehaviour
 
     public void SetNextPlayer()
     {
-        if (this.currentPlayer == null)
+        if (this.currentPlayerController == null)
         {
-            this.currentPlayer = players[0];
+            this.currentPlayerController = players[0];
         }
         else
         {
-            var currentIndex = players.IndexOf(currentPlayer);
+            var currentIndex = 0;
+            foreach (PlayerController playerC in players)
+            {
+                if (currentPlayerController.Equals(playerC))
+                {
+                    break;
+                }
+                currentIndex++;
+            }
             if (currentIndex == players.Count - 1)
             {
-                currentPlayer = players[0];
+                this.currentPlayerController = players[0];
             }
             else
             {
-                currentPlayer = players[currentIndex + 1];
+                this.currentPlayerController = players[currentIndex + 1];
             }
         }
+        this.currentPlayer = this.currentPlayerController.GetPlayer();
     }
 
-    public void AddPlayer(Player player)
+    public void AddPlayer(PlayerController player)
     {
         players.Add(player);
     }
 
-    public void RemovePlayer(Player player)
+    public void RemovePlayer(PlayerController player)
     {
         players.Remove(player);
     }
 
     public void EndPlayerTurn()
     {
-        SetNextPlayer();
-        selectedTerritoy = null;
+        if (currentPlayer.GetArmiesPerTurn() <= 0)
+        {
+            SetNextPlayer();
+            currentPlayerController.CalcReinforcmentArmies();
+            selectedTerritoy = null;
+            if (!CheckToStartGame())
+            {
+                textOverlay.NextPlayer(currentPlayer);
+            }
+        }
+        else
+        {
+            Debug.Log("Use all of your armies first");
+        }
+    }
+
+    public void HandleCheckButton() {
+        if (currentPlayer.GetArmiesPerTurn() <= 0)
+        {
+            if (GameStatesController.IsSetupGame() || GameStatesController.IsMove() || GameStatesController.IsNotStartedGame())
+            {
+                EndPlayerTurn();
+            }
+            else
+            {
+                GameStatesController.NextState();
+            }
+        }
+
     }
 
     public Player GetCurrentPlayer()
@@ -147,21 +251,113 @@ public class GameManager : MonoBehaviour
         return this.currentPlayer;
     }
 
-    public Territory GetSelectedTerritory()
+    public TerritoryController GetSelectedTerritory()
     {
         return this.selectedTerritoy;
     }
 
-    public void SetSelectedTerritory(Territory territory)
+    public void SetSelectedTerritory(TerritoryController territory)
     {
         this.selectedTerritoy = territory;
+        UpdateAttackMoveInfo();
     }
 
-    public TurnStateEnum GetCurrentTurnState()
+    public void SetDesinationTerritory(TerritoryController territory)
     {
-        return currentState;
+        this.destinationTerritory = territory;
+        UpdateAttackMoveInfo();
     }
 
+    public TerritoryController GetDestinationTerritory()
+    {
+        return this.destinationTerritory;
+    }
+
+    private bool CheckToStartGame()
+    {
+        if (GameStatesController.IsSetupGame())
+        {
+            bool canStart = true;
+            foreach (PlayerController player in players)
+            {
+                if (player.GetStartArmiesCount() > 0)
+                {
+                    canStart = false;
+                    break;
+                }
+            }
+            if (canStart)
+            {
+                textOverlay.WarBegin();
+            }
+            return canStart;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void AutoStartPositioning()
+    {
+        if (GameSettings.AUTO_START_POSITIONING_ARMY)
+        {
+            int hasArmies = players.Count;
+            while(hasArmies > 0)
+            {
+                if (currentPlayerController.GetArmiesPerTurn() <= 0)
+                {
+                    hasArmies--;
+                }
+                else
+                {
+                    while (currentPlayerController.GetArmiesPerTurn() > 0)
+                    {
+                        currentPlayerController.GetTerritoriesOwned()[UnityEngine.Random.Range(0, currentPlayerController.GetTerritoriesOwned().Count)].GetTerritoryController().AddArmy();
+                    }
+                }
+                EndPlayerTurn();
+            }
+            
+        }
+    }
+
+    public void HandleAttackMoveBtn() {
+
+        if (GameStatesController.IsAttack())
+        {
+            selectedDefenderController = destinationTerritory.GetOwnerController();
+            levelLoader.StartBattleField();
+        }
+        else if (GameStatesController.IsMove()) {
+
+        }
+    }
+
+    private void UpdateAttackMoveInfo() {
+
+        if (GameStatesController.IsAttack() || GameStatesController.IsMove())
+        {
+            if (selectedTerritoy != null)
+            {
+                selectedTerritoryText.gameObject.SetActive(true);
+                selectedTerritoryText.text = selectedTerritoy.GetTerritory().GetTerritoryName();
+            }
+            if (selectedTerritoy != null && destinationTerritory != null)
+            {               
+                targetTerritoryText.gameObject.SetActive(true);
+                targetTerritoryText.text = destinationTerritory.GetTerritory().GetTerritoryName();
+
+                arrowFromTo.gameObject.SetActive(true);
+                attackMoveBtn.gameObject.SetActive(true);
+            }
+        }
+
+    }
+
+    public void SetDefender(PlayerController defender) {
+        this.selectedDefenderController = defender;
+    }
 }
 
 static class MyExtensions
