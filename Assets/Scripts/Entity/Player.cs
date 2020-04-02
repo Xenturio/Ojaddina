@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private TargetCard targetCard;
 
-    private StateCard[] stateCards = new StateCard[] { };
+    private TerritoryCard[] territoryCards = new TerritoryCard[] { };
 
     private List<Territory> territoriesOwned = new List<Territory>();
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public Color Color { get => color; set => color = value; }
     public int Armies { get => armies; set => armies = value; }
     public TargetCard TargetCard { get => targetCard; set => targetCard = value; }
-    public StateCard[] StateCards { get => stateCards; set => stateCards = value; }
+    public TerritoryCard[] StateCards { get => territoryCards; set => territoryCards = value; }
     public List<Territory> TerritoriesOwned { get => territoriesOwned; set => territoriesOwned = value; }
     public int ArmiesPerTurn { get => armiesPerTurn; set => armiesPerTurn = value; }
     public int StartArmiesCount { get => startArmiesCount; set => startArmiesCount = value; }

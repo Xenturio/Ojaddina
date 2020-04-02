@@ -20,7 +20,10 @@ public class TextCurrentPlayerUI : MonoBehaviour
 
     private void UpdateTextPlayer()
     {
-        GetComponent<Text>().text = gameManager.GetCurrentPlayer().name + " : " + gameManager.GetCurrentPlayer().GetArmiesPerTurn();
-        GetComponent<Text>().color = gameManager.GetCurrentPlayer().GetPlayerColor();
+        if (gameManager.GetCurrentPlayer())
+        {
+            GetComponent<Text>().text = gameManager.GetCurrentPlayer().name + " : " + gameManager.GetCurrentPlayer().GetArmiesPerTurn();
+            GetComponent<Text>().color = gameManager.GetCurrentPlayer().GetPlayerColor();
+        }
     }
 }

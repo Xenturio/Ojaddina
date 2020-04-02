@@ -2,32 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateCard  : Card
+public class TerritoryCard : MonoBehaviour
 {
-    private Territory state;
+    private Territory territory;
 
-    private string bonus;
+    private BonusCardTypeEnum bonusType;
 
-    public StateCard(string id, string description, Territory state, string bonus)
+    public TerritoryCard(Territory territory)
     {
-        State = state;
-        Bonus = bonus;
-        Description = description;
-        Id = id;
+        this.territory = territory;
     }
 
-    public Territory State { get => state; set => state = value; }
-    public string Bonus { get => bonus; set => bonus = value; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

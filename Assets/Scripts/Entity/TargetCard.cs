@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetCard : Card
+public class TargetCard : MonoBehaviour
 {
     
     private ContinentEnum[] continentsToConquer;
@@ -11,15 +11,4 @@ public class TargetCard : Card
 
     private Player playerToDestroy;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

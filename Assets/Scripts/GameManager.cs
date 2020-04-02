@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
+        if (players == null || players.Count == 0) {
+            levelLoader.LoadMainMenu();
+            return;
+        }
         if (GameStatesController.IsNotStartedGame())
         {
             SetupMatch();
@@ -112,20 +116,22 @@ public class GameManager : MonoBehaviour
 
     private void DistributeTerritories()
     {
-
-        territories = FindObjectsOfType<TerritoryController>();
-        List<TerritoryController> randomTerritories = new List<TerritoryController>(territories);
-        randomTerritories.Shuffle();
-        var playerIndex = 0;
-        foreach (TerritoryController territory in randomTerritories)
+        if (players != null && players.Count > 0)
         {
-            if (playerIndex == players.Count)
+            territories = FindObjectsOfType<TerritoryController>();
+            List<TerritoryController> randomTerritories = new List<TerritoryController>(territories);
+            randomTerritories.Shuffle();
+            var playerIndex = 0;
+            foreach (TerritoryController territory in randomTerritories)
             {
-                playerIndex = 0;
+                if (playerIndex == players.Count)
+                {
+                    playerIndex = 0;
+                }
+                players[playerIndex].AddTerritory(territory.GetTerritory());
+                territory.SetOwner(players[playerIndex]);
+                playerIndex++;
             }
-            players[playerIndex].AddTerritory(territory.GetTerritory());
-            territory.SetOwner(players[playerIndex]);
-            playerIndex++;
         }
     }
 
@@ -192,11 +198,12 @@ public class GameManager : MonoBehaviour
 
     public void SetNextPlayer()
     {
-        if (this.currentPlayerController == null)
+        if (this.currentPlayerController == null && players.Count > 0)
         {
             this.currentPlayerController = players[0];
+            this.currentPlayer = this.currentPlayerController.GetPlayer();
         }
-        else
+        else if(this.currentPlayerController != null)
         {
             var currentIndex = 0;
             foreach (PlayerController playerC in players)
@@ -215,8 +222,9 @@ public class GameManager : MonoBehaviour
             {
                 this.currentPlayerController = players[currentIndex + 1];
             }
+            this.currentPlayer = this.currentPlayerController.GetPlayer();
         }
-        this.currentPlayer = this.currentPlayerController.GetPlayer();
+        
     }
 
     public void AddPlayer(PlayerController player)
