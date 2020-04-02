@@ -345,6 +345,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Stati Uniti O.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 890497265}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1849365796}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1685762900}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1499600027}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -390,34 +418,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Stati Uniti O.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 890497265}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1849365796}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1685762900}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1499600027}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!114 &68403620 stripped
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 429370606}
-        m_MethodName: HandleCheckButton
+        m_MethodName: HandleContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -753,6 +753,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Ucraina
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1176124564}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 350303020}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 2015969707}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 1430396646}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -798,42 +834,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Ucraina
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1176124564}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 350303020}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1128925994}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1370019853}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 2015969707}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 1430396646}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &94336855 stripped
@@ -988,6 +988,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: America centrale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 2076299979}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 890497265}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1314100920}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1033,30 +1057,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: America centrale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 2076299979}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 890497265}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1314100920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &135920963
@@ -1181,6 +1181,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 438328927}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1102313233}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 584023270}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1226,22 +1242,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 438328927}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1102313233}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 584023270}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &135920964 stripped
@@ -1613,6 +1613,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Quebec
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 112033284}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1499600027}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 890497265}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1658,30 +1682,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Quebec
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 112033284}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1499600027}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 890497265}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &295867664
@@ -1875,6 +1875,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Congo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1702939788}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 484951154}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1920,30 +1944,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Congo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1387167540}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1702939788}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 484951154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &298864791 stripped
@@ -2074,6 +2074,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Brasile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 2076299979}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 218071645}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 68403620}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 484951154}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2119,34 +2147,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Brasile
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 2076299979}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 218071645}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 68403620}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 484951154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &325789652 stripped
@@ -2236,6 +2236,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a99423db06ad3498d532d02308a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &367308221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367308222}
+  - component: {fileID: 367308224}
+  - component: {fileID: 367308223}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &367308222
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367308221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 875960922}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &367308223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367308221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &367308224
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367308221}
+  m_CullTransparentMesh: 0
 --- !u!4 &370799257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6658174377827474910, guid: f60f989d726edf2428c8c640ace3dbec,
@@ -2364,6 +2438,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1102313233}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Nuova Guinea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 473765081}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 584023270}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2409,26 +2503,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1102313233}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Nuova Guinea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 473765081}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 584023270}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &376880725 stripped
@@ -2559,6 +2633,38 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Est Africa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 581176442}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 519270183}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1702939788}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 708132391}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2604,38 +2710,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Est Africa
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 581176442}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1370019853}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 519270183}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1702939788}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 708132391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &381219990 stripped
@@ -2644,6 +2718,42 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 381219989}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386368959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386368960}
+  m_Layer: 5
+  m_Name: Handle Slide Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &386368960
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386368959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2098541738}
+  m_Father: {fileID: 875960922}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &395148780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2746,7 +2856,6 @@ Transform:
   - {fileID: 747811792}
   - {fileID: 1995368534}
   - {fileID: 255599990}
-  - {fileID: 1609316427}
   - {fileID: 1466087801}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2768,7 +2877,8 @@ MonoBehaviour:
   targetTerritoryText: {fileID: 18707148}
   arrowFromTo: {fileID: 2086497125}
   attackMoveBtn: {fileID: 1063603915}
-  textOverlay: {fileID: 1701644397}
+  endTurnSound: {fileID: 1848955493}
+  moveSlider: {fileID: 875960923}
 --- !u!114 &438328927 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a,
@@ -2781,6 +2891,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a99423db06ad3498d532d02308a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &443740480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443740481}
+  - component: {fileID: 443740483}
+  - component: {fileID: 443740482}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &443740481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443740480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 875960922}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 108.5, y: 0.0000087023}
+  m_SizeDelta: {x: 37.3, y: 27.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &443740482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443740480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 83b2fa31225dea147813a41568821134, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &443740483
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443740480}
+  m_CullTransparentMesh: 0
 --- !u!114 &473765081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a,
@@ -3160,6 +3349,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Egitto
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 484951154}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1128925994}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3205,34 +3422,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Egitto
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 484951154}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1387167540}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1370019853}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1128925994}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &615475997 stripped
@@ -3375,6 +3564,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Islanda
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1330341851}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176124564}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 112033284}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3420,30 +3633,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Islanda
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1330341851}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1176124564}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 112033284}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &666238317 stripped
@@ -3666,6 +3855,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Australia occidentale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 473765081}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 251978742}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 438328927}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3711,26 +3920,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Australia occidentale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 473765081}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 251978742}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 438328927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &684766740 stripped
@@ -3885,6 +4074,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Medio oriente
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 581176442}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 1098553721}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3930,42 +4155,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Medio oriente
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1128925994}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 581176442}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1387167540}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 1098553721}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 2015969707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &724877500 stripped
@@ -4168,6 +4357,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1430396646}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 960089414}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1625277651}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1687974712}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 77883993}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4213,34 +4430,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1430396646}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 960089414}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1625277651}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1687974712}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 77883993}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &769528361 stripped
@@ -4371,6 +4560,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 2015969707}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 77883993}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1102313233}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4416,30 +4629,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1370019853}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 2015969707}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 77883993}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1102313233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &797228826 stripped
@@ -4613,6 +4802,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Giappone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1687974712}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1190991463}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4658,26 +4867,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Giappone
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1687974712}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1190991463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &805440136 stripped
@@ -4755,6 +4944,109 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f60f989d726edf2428c8c640ace3dbec, type: 3}
+--- !u!1 &875960921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875960922}
+  - component: {fileID: 875960923}
+  m_Layer: 5
+  m_Name: Slider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &875960922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875960921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0609223, y: 1.9872, z: 1}
+  m_Children:
+  - {fileID: 367308222}
+  - {fileID: 1728199903}
+  - {fileID: 386368960}
+  - {fileID: 443740481}
+  m_Father: {fileID: 1119381307}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -677.48, y: -812.6}
+  m_SizeDelta: {x: 179.81, y: 27.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &875960923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875960921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2098541739}
+  m_FillRect: {fileID: 1116044564}
+  m_HandleRect: {fileID: 2098541738}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 1
+  m_Value: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 429370606}
+        m_MethodName: HandleSliderMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &881038189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6658174377827474910, guid: f60f989d726edf2428c8c640ace3dbec,
@@ -4985,6 +5277,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 104148861}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Territori del N.O.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 112033284}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1849365796}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1499600027}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5030,34 +5350,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 104148861}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Territori del N.O.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 112033284}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1849365796}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1499600027}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1 &989790512
@@ -5184,7 +5476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5464,6 +5756,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103859478}
   m_CullTransparentMesh: 0
+--- !u!1 &1116044563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116044564}
+  - component: {fileID: 1116044566}
+  - component: {fileID: 1116044565}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1116044564
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116044563}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1728199903}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1116044565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116044563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1116044566
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116044563}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1117549738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5586,6 +5952,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Groenlandia
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 285753755}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1499600027}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 707412134}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1811538658}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5631,34 +6025,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Groenlandia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 285753755}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1499600027}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 707412134}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1811538658}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1 &1119381306
@@ -5697,6 +6063,7 @@ RectTransform:
   - {fileID: 1537152852}
   - {fileID: 18707150}
   - {fileID: 2086497127}
+  - {fileID: 875960922}
   m_Father: {fileID: 1347460322}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5876,6 +6243,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Europa Occidentale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1330341851}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 484951154}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 350303020}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5921,34 +6316,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Europa Occidentale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1330341851}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 484951154}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1128925994}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 350303020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1135452870 stripped
@@ -6070,84 +6437,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1544117229}
+  - {fileID: 1848955494}
   - {fileID: 1312429906}
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1260083598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1260083599}
-  - component: {fileID: 1260083601}
-  - component: {fileID: 1260083600}
-  m_Layer: 5
-  m_Name: OverlayImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1260083599
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260083598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1609316427}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.2, y: -11}
-  m_SizeDelta: {x: 1916.9, y: 1107.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1260083600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260083598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9098039}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4f033cdd2b09f9a43b139729d09d002c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1260083601
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260083598}
-  m_CullTransparentMesh: 0
 --- !u!1001 &1284488634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6270,6 +6564,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Stati Uniti E.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1314100920}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 285753755}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1499600027}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1685762900}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6315,34 +6637,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Stati Uniti E.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1314100920}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 285753755}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1499600027}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1685762900}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1 &1312429905
@@ -6374,7 +6668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1244334153}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1312429907
 MonoBehaviour:
@@ -6566,6 +6860,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Ontario
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1849365796}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1811538658}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 112033284}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 285753755}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 890497265}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 1314100920}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6611,42 +6941,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Ontario
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1849365796}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1811538658}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 112033284}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 285753755}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 890497265}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 1314100920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &1327304921
@@ -6771,6 +7065,38 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Europa settentrionale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 4736507}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1330341851}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 1176124564}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6816,38 +7142,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Europa settentrionale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1128925994}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 4736507}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1330341851}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 1176124564}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1327304922 stripped
@@ -6990,6 +7284,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 77883993}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1098553721}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 251978742}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7035,26 +7349,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 77883993}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1098553721}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 251978742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1331265421 stripped
@@ -7137,7 +7431,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7414,6 +7708,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1430396646}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1098553721}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 77883993}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7459,34 +7781,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1370019853}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1430396646}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1098553721}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 77883993}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1453362731 stripped
@@ -7617,6 +7911,38 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1687974712}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 634619567}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1430396646}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 2015969707}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 1098553721}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 1102313233}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7662,38 +7988,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1687974712}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 634619567}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1430396646}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 2015969707}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 1098553721}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 1102313233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1460462868 stripped
@@ -7744,7 +8038,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 429370605}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1499600027 stripped
 MonoBehaviour:
@@ -7848,7 +8142,7 @@ GameObject:
   - component: {fileID: 1544117229}
   - component: {fileID: 1544117228}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8086,6 +8380,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1625277651}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1190991463}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1894390630}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 77883993}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 634619567}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8131,30 +8449,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1625277651}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1190991463}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1894390630}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 77883993}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 634619567}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1581524408 stripped
@@ -8285,6 +8579,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Sud Africa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 519270183}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 708132391}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8330,30 +8648,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Sud Africa
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 519270183}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1387167540}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 708132391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1585916159 stripped
@@ -8368,92 +8662,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 395148780}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1609316425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1609316427}
-  - component: {fileID: 1609316426}
-  - component: {fileID: 1609316428}
-  m_Layer: 5
-  m_Name: Overlay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!223 &1609316426
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609316425}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 349969195
-  m_SortingOrder: 5
-  m_TargetDisplay: 0
---- !u!224 &1609316427
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609316425}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 399.81793}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1260083599}
-  - {fileID: 1701644396}
-  m_Father: {fileID: 429370605}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -214.47717, y: -65.71796}
-  m_SizeDelta: {x: 1606.1, y: 977.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &1609316428
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609316425}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -26.244873, y: -8.82901}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1627.616, y: 1030.9089}
-  m_EdgeRadius: 0
 --- !u!1001 &1622868575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8576,6 +8784,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Madagascar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1702939788}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1387167540}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8621,26 +8849,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Madagascar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1702939788}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1387167540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1622868576 stripped
@@ -8783,6 +8991,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Venezuela
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1685762900}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 77908597}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 68403620}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8828,30 +9060,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Venezuela
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1685762900}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 77908597}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 68403620}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &1645885644
@@ -8976,6 +9184,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Gran Bretagna
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 707412134}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176124564}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 350303020}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 4736507}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9021,34 +9257,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Gran Bretagna
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 707412134}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1176124564}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 350303020}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 4736507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1645885645 stripped
@@ -9057,6 +9265,98 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1645885644}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1649804072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649804076}
+  - component: {fileID: 1649804075}
+  - component: {fileID: 1649804074}
+  - component: {fileID: 1649804073}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1649804073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649804072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1649804074
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649804072}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: db96e04f47f6c2a44bc6bb90f93602ec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1649804075
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649804072}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1649804076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649804072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 782.6, y: 442.5, z: 10}
+  m_LocalScale: {x: -1621.9294, y: -995.8078, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676657289
 GameObject:
   m_ObjectHideFlags: 0
@@ -9270,6 +9570,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Cita
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1190991463}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 634619567}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 960089414}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1687974712}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9315,34 +9643,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Cita
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1190991463}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 634619567}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 960089414}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1687974712}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1687047206 stripped
@@ -9363,98 +9663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a99423db06ad3498d532d02308a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1701644395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1701644396}
-  - component: {fileID: 1701644400}
-  - component: {fileID: 1701644399}
-  - component: {fileID: 1701644397}
-  m_Layer: 5
-  m_Name: OverlayText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1701644396
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701644395}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1609316427}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.584473, y: -29.533539}
-  m_SizeDelta: {x: 1510.7, y: 880.4}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1701644397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701644395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e537aac0f50bb44daee14695fb677fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1701644399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701644395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 83b2fa31225dea147813a41568821134, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 200
-    m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: START
---- !u!222 &1701644400
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701644395}
-  m_CullTransparentMesh: 0
 --- !u!114 &1702939788 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a,
@@ -9589,6 +9797,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Jacuzia
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1190991463}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1625277651}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 634619567}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9634,30 +9866,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Jacuzia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1190991463}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1625277651}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 634619567}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1705586683 stripped
@@ -9788,6 +9996,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Europa meridionale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 350303020}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 581176442}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 484951154}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 4736507}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 1370019853}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9833,42 +10077,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Europa meridionale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 350303020}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 581176442}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 484951154}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 4736507}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 1370019853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1720442285 stripped
@@ -9877,6 +10085,42 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1720442284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1728199902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728199903}
+  m_Layer: 5
+  m_Name: Fill Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1728199903
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728199902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1116044564}
+  m_Father: {fileID: 875960922}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1765823572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9999,6 +10243,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Scandinavia
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 707412134}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1330341851}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 350303020}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10044,34 +10316,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Scandinavia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 707412134}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1330341851}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 350303020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1765823573 stripped
@@ -10202,6 +10446,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Peru'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 218071645}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 2076299979}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 77908597}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10247,30 +10515,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Peru'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 218071645}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 2076299979}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 77908597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &1810362537
@@ -10395,6 +10639,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1811538658}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Alberta
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 1499600027}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1314100920}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 104148861}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10440,34 +10712,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1811538658}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Alberta
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 1499600027}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1314100920}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 104148861}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!114 &1811538658 stripped
@@ -10696,6 +10940,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Australia orientale
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 584023270}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 438328927}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10741,22 +11001,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Australia orientale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 584023270}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 438328927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1847639876 stripped
@@ -10765,6 +11009,133 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1847639875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1848955492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848955494}
+  - component: {fileID: 1848955493}
+  m_Layer: 0
+  m_Name: EndTurn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1848955493
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848955492}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c12d40421acc84a4b90823d6080bbad1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1848955494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848955492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1244334153}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1849365796 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a,
@@ -11002,6 +11373,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 104148861}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 960089414}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 1625277651}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1894390630}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11047,30 +11442,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 104148861}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 960089414}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 1625277651}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1894390630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &1999671089 stripped
@@ -11201,6 +11572,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Urali
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1176021453}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 634619567}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 77883993}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11246,34 +11645,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Urali
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 1176021453}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 634619567}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 77883993}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 2015969707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &2010382721 stripped
@@ -11465,6 +11836,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Nord Africa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 77908597}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 581176442}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[2]
+      value: 
+      objectReference: {fileID: 519270183}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[3]
+      value: 
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 4736507}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11510,42 +11917,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Nord Africa
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 77908597}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 581176442}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[2]
-      value: 
-      objectReference: {fileID: 519270183}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[3]
-      value: 
-      objectReference: {fileID: 1387167540}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[4]
-      value: 
-      objectReference: {fileID: 1128925994}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[5]
-      value: 
-      objectReference: {fileID: 4736507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!224 &2070401896 stripped
@@ -11640,6 +12011,81 @@ RectTransform:
   m_AnchoredPosition: {x: -23.975, y: 1.0001}
   m_SizeDelta: {x: 111.15, y: 50.254}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2098541737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2098541738}
+  - component: {fileID: 2098541740}
+  - component: {fileID: 2098541739}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2098541738
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098541737}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2375, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 386368960}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.2, y: 0}
+  m_SizeDelta: {x: 32.3, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2098541739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098541737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 6719877630809283541, guid: 24e15465922868e43bef56bef1fd1a1d,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &2098541740
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098541737}
+  m_CullTransparentMesh: 0
 --- !u!224 &2108720407 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4614973844649902153, guid: 4e61374c8aa0c9246909c9390b68046a,
@@ -11847,6 +12293,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: continent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: territoryName
+      value: Argentina
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[0]
+      value: 
+      objectReference: {fileID: 68403620}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[1]
+      value: 
+      objectReference: {fileID: 77908597}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11892,26 +12358,6 @@ PrefabInstance:
       propertyPath: attackMoveBtn
       value: 
       objectReference: {fileID: 1063603915}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Argentina
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[0]
-      value: 
-      objectReference: {fileID: 68403620}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.data[1]
-      value: 
-      objectReference: {fileID: 77908597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
 --- !u!1001 &4614973844658457782
@@ -12031,26 +12477,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.size
       value: 3
@@ -12073,6 +12499,48 @@ PrefabInstance:
       objectReference: {fileID: 1190991463}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: continent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
+    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d,
+        type: 3}
+    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d,
+        type: 3}
+    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: m_Transition
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

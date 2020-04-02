@@ -487,7 +487,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9713695, g: 1, b: 0, a: 1}
@@ -499,8 +499,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b67842072f237164aac498cf81d511f0, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: b67842072f237164aac498cf81d511f0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -544,10 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d516a59cf1f450949bcc82f214f4ec5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedTerritoryText: {fileID: 0}
-  targetTerritoryText: {fileID: 0}
-  arrowFromTo: {fileID: 0}
-  attackMoveBtn: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: b67842072f237164aac498cf81d511f0, type: 3}
+  alternativeSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d, type: 3}
 --- !u!114 &-6480523188259495311
 MonoBehaviour:
   m_ObjectHideFlags: 0

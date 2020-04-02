@@ -21,6 +21,30 @@ public class Player : MonoBehaviour
     //Numero di armate iniziali
     private int startArmiesCount = 20;
 
+    private PlayerController controller;
+
+    public string PlayerName { get => playerName; set => playerName = value; }
+    public Color Color { get => color; set => color = value; }
+    public int Armies { get => armies; set => armies = value; }
+    public TargetCard TargetCard { get => targetCard; set => targetCard = value; }
+    public StateCard[] StateCards { get => stateCards; set => stateCards = value; }
+    public List<Territory> TerritoriesOwned { get => territoriesOwned; set => territoriesOwned = value; }
+    public int ArmiesPerTurn { get => armiesPerTurn; set => armiesPerTurn = value; }
+    public int StartArmiesCount { get => startArmiesCount; set => startArmiesCount = value; }
+    public PlayerController Controller { get => controller; set => controller = value; }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        if (string.IsNullOrEmpty(playerName)) {
+            playerName = name;
+        }
+    }
+
     public void AddTerritory(Territory newTerritory) {
         territoriesOwned.Add(newTerritory);
     }

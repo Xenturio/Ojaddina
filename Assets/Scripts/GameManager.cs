@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text targetTerritoryText;
     [SerializeField] Image arrowFromTo;
     [SerializeField] Button attackMoveBtn;
-    [SerializeField] TextOverlayUI textOverlay;
+    [SerializeField] AudioSource endTurnSound;
+    [SerializeField] Slider moveSlider;
 
     private List<PlayerController> players;
 
@@ -31,9 +32,14 @@ public class GameManager : MonoBehaviour
 
     private int allStartArmies = 0;
 
-    
+    private int armiesToMove = 0;
 
     private LevelLoader levelLoader;
+
+    public PlayerController CurrentPlayerController { get => currentPlayerController; set => currentPlayerController = value; }
+    public PlayerController SelectedDefenderController { get => selectedDefenderController; set => selectedDefenderController = value; }
+    public TerritoryController SelectedTerritoy { get => selectedTerritoy; set => selectedTerritoy = value; }
+    public TerritoryController DestinationTerritory { get => destinationTerritory; set => destinationTerritory = value; }
 
     private void Awake()
     {
@@ -43,14 +49,23 @@ public class GameManager : MonoBehaviour
         targetTerritoryText.gameObject.SetActive(false);
         arrowFromTo.gameObject.SetActive(false);
         attackMoveBtn.gameObject.SetActive(false);
+        moveSlider.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
     {
         players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
-        SetupMatch();
+        if (GameStatesController.IsNotStartedGame())
+        {
+            SetupMatch();
+        }
+        else {
+            //LoadGameObjects();
+        }
         StartGame();
     }
+
+   
 
     // Update is called once per frame
     void Update()
@@ -91,6 +106,7 @@ public class GameManager : MonoBehaviour
         if (GameStatesController.IsSetupGame()){            
             GameStatesController.NextState();
             currentPlayerController.CalcReinforcmentArmies();
+            UpdateTerritoriesInfo();
         }
     }
 
@@ -213,16 +229,26 @@ public class GameManager : MonoBehaviour
         players.Remove(player);
     }
 
+    private void SetMoving() {        
+        GameStatesController.SetMoving();
+        UpdateAttackMoveInfo();
+    }
+
     public void EndPlayerTurn()
     {
         if (currentPlayer.GetArmiesPerTurn() <= 0)
         {
+            if (GameStatesController.IsMove()) {
+                GameStatesController.NextState();
+            }
             SetNextPlayer();
             currentPlayerController.CalcReinforcmentArmies();
             selectedTerritoy = null;
+            DestinationTerritory = null;
+            SelectedDefenderController = null;
             if (!CheckToStartGame())
             {
-                textOverlay.NextPlayer(currentPlayer);
+                endTurnSound.Play();
             }
         }
         else
@@ -231,19 +257,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void HandleCheckButton() {
+    public void HandleContinueButton() {
         if (currentPlayer.GetArmiesPerTurn() <= 0)
         {
+            UpdateAttackMoveInfo();
+            UpdateTerritoriesInfo();
             if (GameStatesController.IsSetupGame() || GameStatesController.IsMove() || GameStatesController.IsNotStartedGame())
-            {
+            {                
                 EndPlayerTurn();
             }
             else
             {
+               
                 GameStatesController.NextState();
             }
         }
 
+    }
+
+    private void UpdateTerritoriesInfo()
+    {
+        foreach (TerritoryController territoryController in territories) {
+            territoryController.UpdateTerritoryAtEndTurn();            
+        }
     }
 
     public Player GetCurrentPlayer()
@@ -286,10 +322,6 @@ public class GameManager : MonoBehaviour
                     break;
                 }
             }
-            if (canStart)
-            {
-                textOverlay.WarBegin();
-            }
             return canStart;
         }
         else
@@ -326,16 +358,47 @@ public class GameManager : MonoBehaviour
 
         if (GameStatesController.IsAttack())
         {
-            selectedDefenderController = destinationTerritory.GetOwnerController();
+            this.selectedDefenderController = destinationTerritory.GetOwnerController();
             levelLoader.StartBattleField();
         }
-        else if (GameStatesController.IsMove()) {
+        else if (GameStatesController.IsMove())
+        {
+            if (this.selectedTerritoy != null && this.destinationTerritory != null)
+            {
+                SetMoving();
+            }
+        }
+        else if (GameStatesController.IsMoving()) {
+            this.SelectedTerritoy.RemoveArmies((int)moveSlider.value);
+            this.DestinationTerritory.AddArmies((int)moveSlider.value);
+            GameStatesController.NextState();
+            moveSlider.value = 0;
+            moveSlider.gameObject.SetActive(false);            
+            UpdateAttackMoveInfo();           
+            EndPlayerTurn();
+        }
+    }
 
+    public void HandleSliderMove() {
+        if (selectedTerritoy.Territory.Armies > 1)
+        {
+            armiesToMove = (int) moveSlider.value;
+            moveSlider.GetComponentInChildren<Text>().text = moveSlider.value.ToString();
         }
     }
 
     private void UpdateAttackMoveInfo() {
 
+        if (GameStatesController.IsMoving()) {
+            moveSlider.gameObject.SetActive(true);
+            attackMoveBtn.gameObject.SetActive(true);
+            moveSlider.maxValue = selectedTerritoy.Territory.Armies - 1;
+            if (attackMoveBtn.GetComponentInChildren<Text>())
+            {
+                attackMoveBtn.GetComponentInChildren<Text>().text = "CONFIRM";
+            }
+            return;
+        }
         if (GameStatesController.IsAttack() || GameStatesController.IsMove())
         {
             if (selectedTerritoy != null)
@@ -343,14 +406,36 @@ public class GameManager : MonoBehaviour
                 selectedTerritoryText.gameObject.SetActive(true);
                 selectedTerritoryText.text = selectedTerritoy.GetTerritory().GetTerritoryName();
             }
-            if (selectedTerritoy != null && destinationTerritory != null)
-            {               
+            else
+            {
+                selectedTerritoryText.gameObject.SetActive(false);
+                targetTerritoryText.gameObject.SetActive(false);
+                arrowFromTo.gameObject.SetActive(false);
+                attackMoveBtn.gameObject.SetActive(false);
+                return;
+            }
+            if (destinationTerritory != null)
+            {
                 targetTerritoryText.gameObject.SetActive(true);
                 targetTerritoryText.text = destinationTerritory.GetTerritory().GetTerritoryName();
-
                 arrowFromTo.gameObject.SetActive(true);
                 attackMoveBtn.gameObject.SetActive(true);
+                if (attackMoveBtn.GetComponentInChildren<Text>())
+                {
+                    attackMoveBtn.GetComponentInChildren<Text>().text = GameStatesController.IsAttack() ? "ATTACK" : "MOVE";
+                }
             }
+            else {
+                targetTerritoryText.gameObject.SetActive(false);
+                arrowFromTo.gameObject.SetActive(false);
+                attackMoveBtn.gameObject.SetActive(false);
+            }
+        }
+        else {
+            selectedTerritoryText.gameObject.SetActive(false);
+            targetTerritoryText.gameObject.SetActive(false);
+            arrowFromTo.gameObject.SetActive(false);
+            attackMoveBtn.gameObject.SetActive(false);
         }
 
     }
@@ -358,6 +443,7 @@ public class GameManager : MonoBehaviour
     public void SetDefender(PlayerController defender) {
         this.selectedDefenderController = defender;
     }
+
 }
 
 static class MyExtensions

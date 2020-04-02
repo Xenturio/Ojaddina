@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPointerClickHandler
 {
+    [SerializeField] Sprite selectedSprite;
+    [SerializeField] Sprite alternativeSprite;
+
+    Sprite baseSprite;
+
     private Territory territory;
 
     private GameManager gameManager;
@@ -14,9 +19,13 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
 
     private TextArmy textArmy;
 
-    private Territory attackingTerritory;
-
     private PlayerController ownerController;
+
+    private bool hasSelectedSprite = false;
+    private bool hasAlternativeSprite = false;
+
+    public Territory Territory { get => territory; set => territory = value; }
+    public PlayerController OwnerController { get => ownerController; set => ownerController = value; }
 
     private void Awake()
     {
@@ -25,11 +34,27 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
         textName = GetComponentInChildren<TerritoryTextName>();
         textArmy = GetComponentInChildren<TextArmy>();
         territory = GetComponent<Territory>();
+        baseSprite = GetComponent<Button>().image.sprite;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        UpdateArmyDisplay();
+    }
+
+    void Update() {
+        SplitSprite();
+    }
+
+    public void AddArmies(int armies) {
+        territory.SetArmies(territory.GetArmies() + armies);
+        UpdateArmyDisplay();
+    }
+
+    public void RemoveArmies(int armies)
+    {
+        territory.SetArmies(territory.GetArmies() - armies);
         UpdateArmyDisplay();
     }
 
@@ -40,11 +65,6 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
             territory.GetPlayer().RemoveArmyPerTurn();
             territory.AddArmy();
             UpdateArmyDisplay();
-        }
-        else if (GameStatesController.IsMove())
-        {
-            //territory.AddArmy();
-            //UpdateArmyDisplay();
         }
         else if (GameStatesController.IsSetupGame() && territory.GetPlayer().GetArmiesPerTurn() > 0)
         {
@@ -64,8 +84,22 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
     {
         if (territory.GetArmies() > 1)
         {
+            if (GameStatesController.IsReinforce()) {
+                if (territory.StartReinforceArmies >= territory.Armies) {
+                    return;
+                }
+            }
             territory.GetPlayer().AddArmyPerTurn(1);
-            territory.RemoveArmy();
+            territory.RemoveArmy(1);
+            UpdateArmyDisplay();
+        }
+    }
+
+    public void LoseArmies(int armies) {
+        if (territory.GetArmies() > 1)
+        {
+            territory.GetPlayer().LostArmies(armies);
+            territory.RemoveArmy(armies);
             UpdateArmyDisplay();
         }
     }
@@ -147,7 +181,6 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
         if (IsAttackableTerritory())
         {
             gameManager.SetDesinationTerritory(this);
-            GetComponentInChildren<SwordsTerritoryUI>().EnableAnimation();
         }
     }
 
@@ -157,44 +190,61 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
     }
 
     private void MoveArmy() {
-        if (gameManager.GetSelectedTerritory() != null && !gameManager.GetSelectedTerritory().Equals(territory) && IsNeighbor())
+        if (gameManager.GetSelectedTerritory() != null && !gameManager.GetSelectedTerritory().Equals(this) && IsNeighbor())
         {
             gameManager.SetDesinationTerritory(this);
         }
     }
 
+    public void UpdateTerritoryAtEndTurn() {
+        territory.StartReinforceArmies = territory.Armies;
+    }
+
     private void HandleClick(bool left) {
         bool isOwner = territory.GetPlayer().Equals(gameManager.GetCurrentPlayer());
+       
         if (left)
         {
-            if (isOwner && !GameStatesController.IsAttack())
+            if (isOwner && !GameStatesController.IsAttack() && !GameStatesController.IsMove())
             {
                 AddArmy();
             }
-            else if (isOwner && GameStatesController.IsAttack())
-            {
-                gameManager.SetSelectedTerritory(this);
-            }
-            else if (!isOwner && GameStatesController.IsAttack() && gameManager.GetSelectedTerritory() != null)
-            {
-                Attack();
-            }
         }
-        else {
-            if (isOwner && GameStatesController.IsMove()) {
-                MoveArmy();
-            }
-            if (isOwner && !GameStatesController.IsAttack())
+        else {           
+            if (isOwner && !GameStatesController.IsAttack() && !GameStatesController.IsMove())
             {
                 RemoveArmy();
             }
         }
-
+        if (isOwner && GameStatesController.IsAttack())
+        {
+            gameManager.SetSelectedTerritory(this);
+        }
+        else if (!isOwner && GameStatesController.IsAttack() && gameManager.GetSelectedTerritory() != null)
+        {
+            Attack();
+        }
+        if (isOwner && GameStatesController.IsMove())
+        {
+            //Deseleziono il territorio
+            if (gameManager.GetSelectedTerritory() != null && gameManager.GetSelectedTerritory().Equals(this))
+            {
+                gameManager.SetSelectedTerritory(null);
+                gameManager.SetDesinationTerritory(null);
+            }
+            else if (gameManager.GetSelectedTerritory() != null)
+            {
+                MoveArmy();
+            }
+            else if (gameManager.GetSelectedTerritory() == null) {
+                gameManager.SetSelectedTerritory(this);
+            }
+        }
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click territory");        
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             HandleClick(true);
@@ -211,7 +261,37 @@ public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPoin
     }
 
     public PlayerController GetOwnerController() {
-        return ownerController;
+        return territory.GetPlayer().Controller;
     }
+
+    private void SplitSprite() {
+
+        if (gameManager.GetDestinationTerritory() != null && gameManager.GetDestinationTerritory().Equals(this))
+        {
+            if (!hasAlternativeSprite)
+            {
+                hasAlternativeSprite = true;
+                hasSelectedSprite = false;
+                GetComponent<Button>().image.sprite = alternativeSprite;
+            }
+            return;
+        }
+        if (gameManager.GetSelectedTerritory() != null && gameManager.GetSelectedTerritory().Equals(this))
+        {
+            if (!hasSelectedSprite)
+            {
+                GetComponent<Button>().image.sprite = selectedSprite;
+                hasSelectedSprite = true;
+                hasAlternativeSprite = false;
+            }
+            return;
+        }
+        hasAlternativeSprite = false;
+        hasSelectedSprite = false;
+        if (!GetComponent<Button>().image.sprite.Equals(baseSprite)) {
+            GetComponent<Button>().image.sprite = baseSprite;
+        }
+    }
+
 
 }

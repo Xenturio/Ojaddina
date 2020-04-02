@@ -23,6 +23,14 @@ public class Territory : MonoBehaviour
 
     private int armies = 0;
 
+    //Armate all'inizio del turno di rinforzo
+    private int startReinforceArmies = 0;
+
+    public Player Owner { get => owner; set => owner = value; }
+    public TerritoryController Controller { get => controller; set => controller = value; }
+    public int Armies { get => armies; set => armies = value; }
+    public int StartReinforceArmies { get => startReinforceArmies; set => startReinforceArmies = value; }
+
     private void Awake()
     {
         if (string.IsNullOrEmpty(territoryName))
@@ -31,6 +39,7 @@ public class Territory : MonoBehaviour
         }
         GetComponentInChildren<Text>().text = territoryName;
         controller = GetComponent<TerritoryController>();
+        DontDestroyOnLoad(this);
     }
     
     public void AddArmy()
@@ -38,11 +47,11 @@ public class Territory : MonoBehaviour
         this.armies++;
     }
 
-    public void RemoveArmy()
+    public void RemoveArmy(int count)
     {
         if (this.armies > 0)
         {
-            this.armies--;
+            this.armies -= count;
         }
     }
     

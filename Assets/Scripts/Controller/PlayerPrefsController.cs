@@ -53,4 +53,27 @@ public class PlayerPrefsController : MonoBehaviour
     {
         PlayerPrefs.SetString(SAVED_GAME_LEVEL, level);
     }
+
+    public static void SavePlayer(Player player) {
+        var playerJson = JsonUtility.ToJson(player);
+        Debug.Log(playerJson);
+        PlayerPrefs.SetString(player.name, playerJson);
+    }
+
+    public static Player LoadPlayer(Player player) {
+        var playerJson = PlayerPrefs.GetString(player.name);
+        Debug.Log(playerJson);
+        return JsonUtility.FromJson<Player>(playerJson);
+    }
+
+    public static void SaveTerritory(Territory territory)
+    {
+        PlayerPrefs.SetString(territory.name, JsonUtility.ToJson(territory));
+    }
+
+    public static Territory LoadTerritory(Territory territory)
+    {
+        var territoryJson = PlayerPrefs.GetString(territory.name);
+        return JsonUtility.FromJson<Territory>(territoryJson);
+    }
 }

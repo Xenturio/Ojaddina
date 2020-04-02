@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     Player player;
 
+    public Player Player { get => player; set => player = value; }
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -92,13 +94,22 @@ public class PlayerController : MonoBehaviour
 
     public void CalcReinforcmentArmies()
     {
+        var armiesPerTurn = CalculateReinforcmentArmies();
+        player.AddArmyPerTurn(armiesPerTurn);
         //Numero di stati diviso 3
-        if (GameStatesController.IsSetupGame() && player.GetStartArmiesCount() > 0) {           
-            var armiesToAdd = player.GetStartArmiesCount() > 3 ? 3 : player.GetStartArmiesCount();
-            player.AddArmyPerTurn(armiesToAdd);
+        if (GameStatesController.IsSetupGame() && player.GetStartArmiesCount() > 0) {  
             player.SetStartArmiesCount(player.GetStartArmiesCount() - 3);
         }
-        else if(GameStatesController.IsReinforce())
+    }
+
+    public int CalculateReinforcmentArmies() {
+        //Numero di stati diviso 3
+        if (GameStatesController.IsSetupGame() && player.GetStartArmiesCount() > 0)
+        {
+            var armiesToAdd = player.GetStartArmiesCount() > 3 ? 3 : player.GetStartArmiesCount();
+            return armiesToAdd;
+        }
+        else if (GameStatesController.IsReinforce())
         {
             var armies = Mathf.FloorToInt(player.GetTerritoriesOwned().Count / 3);
             //Controllo se ho tutti i territori di un continente
@@ -116,9 +127,9 @@ public class PlayerController : MonoBehaviour
             if (hasOceania) { armies += GameSettings.OCEANIA_ARMY; }
             if (hasEurope) { armies += GameSettings.EUROPE_ARMY; }
 
-            player.AddArmyPerTurn(armies);
-        }       
-
+            return armies;
+        }
+        return 0;
     }
 
 }

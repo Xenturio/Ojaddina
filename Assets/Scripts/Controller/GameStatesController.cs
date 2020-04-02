@@ -29,9 +29,9 @@ public class GameStatesController
                 currentState = GameStatesEnum.MOVE;
                 break;
             case GameStatesEnum.MOVE:
+            case GameStatesEnum.ISMOVING:
                 currentState = GameStatesEnum.REINFORCE;
                 break;
-
         }
     }
 
@@ -59,5 +59,13 @@ public class GameStatesController
     public static bool IsMove()
     {
         return currentState.Equals(GameStatesEnum.MOVE);
+    }
+
+    public static bool IsMoving() {
+        return currentState.Equals(GameStatesEnum.ISMOVING);
+    }
+
+    public static void SetMoving() {
+        currentState = GameStatesEnum.ISMOVING;
     }
 }

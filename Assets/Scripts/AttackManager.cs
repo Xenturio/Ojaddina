@@ -7,6 +7,8 @@ public class AttackManager : MonoBehaviour
 {
     [SerializeField] Slider attackerSlider;
     [SerializeField] Slider defenderSlider;
+    [SerializeField] Slider attackerHealth;
+    [SerializeField] Slider defenderHealth;
     [SerializeField] TankController[] attackerTanks;
     [SerializeField] TankController[] defenderTanks;
     [SerializeField] Text resultText;
@@ -32,7 +34,14 @@ public class AttackManager : MonoBehaviour
     void Start()
     {
         levelLoader = FindObjectOfType<LevelLoader>();
-        gameManager = FindObjectOfType<GameManager>();        
+        gameManager = FindObjectOfType<GameManager>();
+        StartAttack();
+        SetAttackersCount(false);
+        SetDefenderCount(false);
+        attackerSlider.gameObject.GetComponentInChildren<Text>().text = attacker.Player.PlayerName;
+        attackerSlider.gameObject.GetComponentInChildren<Text>().color = attacker.Player.GetPlayerColor();
+        defenderSlider.gameObject.GetComponentInChildren<Text>().text = defender.Player.PlayerName;
+        defenderSlider.gameObject.GetComponentInChildren<Text>().color = defender.Player.GetPlayerColor();
     }
 
     public void Attack() {
@@ -45,13 +54,11 @@ public class AttackManager : MonoBehaviour
 
         for (var i = 0; i < currentAttackerTanks; i++)
         {
-            var dice = Random.Range(1, 7);
             attackerPoint.Add(Random.Range(1, 7));
         }
         for (var i = 0; i < currentDefenderTanks; i++)
         {
-            var dice = Random.Range(1, 7);
-            defenderPoint.Add(dice);
+            defenderPoint.Add(Random.Range(1, 7));
         }
         attackerPoint.Sort((a, b) => b.CompareTo(a));
         defenderPoint.Sort((a, b) => b.CompareTo(a));
@@ -66,33 +73,48 @@ public class AttackManager : MonoBehaviour
 
         int length = attackerPoint.Count >= defenderPoint.Count ? defenderPoint.Count : attackerPoint.Count;
 
+        var attackerArmiesLost = 0;
+        var defenderArmiesLost = 0;
         for (var i = 0; i < length; i++) {
             if (attackerPoint[i] > defenderPoint[i])
             {
                 defenderTanks[i].Death();
-                currentDefenderTanks--;               
+                currentDefenderTanks--;
+                defenderArmiesLost++;
             }
             else {
                 attackerTanks[i].Death();
-                currentAttackerTanks--;                
+                currentAttackerTanks--;
+                attackerArmiesLost++;
             }
-        }        
+        }
+        UpdateArmies(attackerArmiesLost, defenderArmiesLost);
         HandleBattleResult();
     }
 
+    public void Retire() {
+        resultText.color = Color.red;
+        resultText.text = "Shame on you!";
+        gameManager.SetDesinationTerritory(null);
+        StartCoroutine(EndBattle());
+    }
+
     private void HandleBattleResult() {
-        Debug.Log("Attackers :" + currentAttackerTanks);
-        Debug.Log("Defenders :" + currentDefenderTanks);
-        if (currentAttackerTanks <= 0)
+        if (currentAttackerTanks <= 0 && maxAttackerTanks <= 1)
         {
             resultText.color = defender != null ? defender.GetPlayerColor() : Color.blue;
             resultText.text = (defender != null ? defender.name : "Defender") + " WIN";
+            gameManager.SetDesinationTerritory(null);
             StartCoroutine(EndBattle());
         }
-        else if (currentDefenderTanks <= 0)
+        else if (currentDefenderTanks <= 0 && maxDefenderTanks <= 0)
         {
             resultText.color = attacker != null ? attacker.GetPlayerColor() : Color.red;
             resultText.text = (attacker != null ? attacker.name : "Attacker") + " WIN";
+            defenderTerritory.SetOwner(attacker);
+            defenderTerritory.AddArmies(currentAttackerTanks);
+            gameManager.SetSelectedTerritory(defenderTerritory);
+            gameManager.SetDesinationTerritory(null);
             StartCoroutine(EndBattle());
         }
         else {
@@ -101,32 +123,25 @@ public class AttackManager : MonoBehaviour
         }
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void StartAttack(PlayerController attacker, PlayerController defender, TerritoryController attackerTerritory, TerritoryController defenderTerritory) {
-        this.attacker = attacker;
-        this.defender = defender;
-        this.attackerTerritory = attackerTerritory;
-        this.defenderTerritory = defenderTerritory;
-        this.gameObject.SetActive(true);
+    public void StartAttack() {
+        this.attacker = gameManager.CurrentPlayerController;
+        this.defender = gameManager.DestinationTerritory.OwnerController;
+        this.attackerTerritory = gameManager.SelectedTerritoy;
+        this.defenderTerritory = gameManager.DestinationTerritory;
 
-        if (attackerTerritory.GetTerritory().GetArmies() <= 3) {
-            maxAttackerTanks = attackerTerritory.GetTerritory().GetArmies() - 1;
-        }
-        if (defenderTerritory.GetTerritory().GetArmies() < 3)
-        {
-            maxDefenderTanks = defenderTerritory.GetTerritory().GetArmies();
-        }
+        maxAttackerTanks = attackerTerritory.GetTerritory().GetArmies() - 1;
+        maxDefenderTanks = defenderTerritory.GetTerritory().GetArmies();
 
+        attackerHealth.maxValue = maxAttackerTanks;
+        defenderHealth.maxValue = maxDefenderTanks;
+        attackerHealth.value = maxAttackerTanks;
+        defenderHealth.value = maxDefenderTanks;
     }
 
     IEnumerator EndBattle() {
        
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         levelLoader.ReturnToMainGame();
     }
 
@@ -197,6 +212,23 @@ public class AttackManager : MonoBehaviour
                 defenderTanks[2].gameObject.SetActive(true);
             }
         }
+    }
+
+    private void UpdateArmies(int attackerArmiesLost, int defenderArmiesLost) {
+
+        attackerTerritory.LoseArmies(attackerArmiesLost);
+        defenderTerritory.LoseArmies(defenderArmiesLost);
+
+        if (attackerTerritory.GetTerritory().GetArmies() <= 3)
+        {
+            maxAttackerTanks = attackerTerritory.GetTerritory().GetArmies() - 1;
+        }
+        if (defenderTerritory.GetTerritory().GetArmies() < 3)
+        {
+            maxDefenderTanks = defenderTerritory.GetTerritory().GetArmies();
+        }
+        attackerHealth.value = maxAttackerTanks;
+        defenderHealth.value = maxDefenderTanks;
     }
 
 

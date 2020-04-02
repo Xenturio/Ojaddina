@@ -9,5 +9,5 @@ public class GameStatesEnum
     public const string ATTACK = "Attack";
     public const string MOVE = "Move";
     public const string ENDGAME = "End Game";
-
+    public const string ISMOVING = "Moving";
 }

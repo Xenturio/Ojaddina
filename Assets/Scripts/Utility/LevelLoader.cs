@@ -35,7 +35,7 @@ public class LevelLoader : MonoBehaviour
     }
 
     public void ReturnToMainGame() {
-        SceneManager.LoadScene(ScreenEnum.MAIN_GAME);
+        SceneManager.UnloadScene(ScreenEnum.BATTLEFIELD);
     }
 
     public void LoadNextScene()
