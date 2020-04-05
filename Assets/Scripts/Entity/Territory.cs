@@ -1,95 +1,96 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using com.xenturio.enums;
 
-public class Territory : MonoBehaviour
+namespace com.xenturio.entity
 {
-
-    [SerializeField] string territoryName;
-
-    [SerializeField] ContinentEnum continent;
-
-    [SerializeField] List<Territory> neighborTerritories = new List<Territory>();
-
-    [SerializeField] Color highlightedColor = Color.white;
-
-    [SerializeField] Color baseColor;
-
-    private Player owner;
-
-    private TerritoryController controller;
-
-    private int armies = 0;
-
-    //Armate all'inizio del turno di rinforzo
-    private int startReinforceArmies = 0;
-
-    public Player Owner { get => owner; set => owner = value; }
-    public TerritoryController Controller { get => controller; set => controller = value; }
-    public int Armies { get => armies; set => armies = value; }
-    public int StartReinforceArmies { get => startReinforceArmies; set => startReinforceArmies = value; }
-
-    private void Awake()
+    public class Territory : MonoBehaviour
     {
-        if (string.IsNullOrEmpty(territoryName))
+
+        [SerializeField] string territoryName;
+
+        [SerializeField] ContinentEnum continent;
+
+        [SerializeField] List<Territory> neighborTerritories = new List<Territory>();
+
+        [SerializeField] Color highlightedColor = Color.white;
+
+        [SerializeField] Color baseColor;
+
+        private Player owner;
+
+        private int armies = 0;
+
+        //Armate all'inizio del turno di rinforzo
+        private int startReinforceArmies = 0;
+
+        public Player Owner { get => owner; set => owner = value; }
+        public int Armies { get => armies; set => armies = value; }
+        public int StartReinforceArmies { get => startReinforceArmies; set => startReinforceArmies = value; }
+        public string TerritoryName { get => territoryName; set => territoryName = value; }
+
+        private void Awake()
         {
-            territoryName = this.gameObject.name;
+            if (string.IsNullOrEmpty(territoryName))
+            {
+                territoryName = this.gameObject.name;
+            }
+            DontDestroyOnLoad(this);
         }
-        GetComponentInChildren<Text>().text = territoryName;
-        controller = GetComponent<TerritoryController>();
-        DontDestroyOnLoad(this);
-    }
-    
-    public void AddArmy()
-    {
-        this.armies++;
-    }
 
-    public void RemoveArmy(int count)
-    {
-        if (this.armies > 0)
+        public void AddArmy()
         {
-            this.armies -= count;
+            this.armies++;
         }
-    }
-    
-    public void SetOwner(Player owner)
-    {
-        this.owner = owner;
-    }
 
-    public Player GetPlayer()
-    {
-        return this.owner;
-    }
+        public void RemoveArmy(int count)
+        {
+            if (this.armies > 0)
+            {
+                this.armies -= count;
+            }
+        }
 
-    public string GetTerritoryName() {
-        return this.territoryName;
-    }
+        public void SetOwner(Player owner)
+        {
+            this.owner = owner;
+        }
 
-    public List<Territory> GetNeighborTerritories() {
-        return neighborTerritories;
-    }
+        public Player GetPlayer()
+        {
+            return this.owner;
+        }
 
-    public Color GetHighlightColor() {
-        return highlightedColor;
-    }
+        public string GetTerritoryName()
+        {
+            return this.territoryName;
+        }
 
-    public int GetArmies() {
-        return armies;
-    }
+        public List<Territory> GetNeighborTerritories()
+        {
+            return neighborTerritories;
+        }
 
-    public void SetArmies(int armiesCount) {
-        this.armies = armiesCount;
-    }
+        public Color GetHighlightColor()
+        {
+            return highlightedColor;
+        }
 
-    public ContinentEnum GetContinent() {
-        return this.continent;
-    }
+        public int GetArmies()
+        {
+            return armies;
+        }
 
-    public TerritoryController GetTerritoryController() {
-        return controller;
+        public void SetArmies(int armiesCount)
+        {
+            this.armies = armiesCount;
+        }
+
+        public ContinentEnum GetContinent()
+        {
+            return this.continent;
+        }
+
     }
 }

@@ -16,7 +16,9 @@ public class GameSettings
 
     public static bool AUTO_START_POSITIONING_ARMY = true;
 
-    public static Color[] playerColors = { Color.black, Color.blue, Color.green, Color.yellow, Color.red, Color.cyan };
+    public static Color[] playerColors = { Color.black, /*Blue*/new Color32(0, 114, 255, 255), Color.green, Color.yellow, Color.red, new Color(226, 0, 225, 225) };
+
+    public static string[] playerColorsName = { "BLACK", "BLUE", "GREEN", "YELLOW","RED", "PURPLE" };
 
     public const int ASIA_ARMY = 7;
 

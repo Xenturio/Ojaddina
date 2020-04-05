@@ -1,14 +1,18 @@
-﻿using System.Collections;
+﻿using com.xenturio.enums;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetCard : MonoBehaviour
+namespace com.xenturio.entity
 {
-    
-    private ContinentEnum[] continentsToConquer;
+    public class TargetCard : MonoBehaviour
+    {
 
-    private int statesToHave;
+        private ContinentEnum[] continentsToConquer;
 
-    private Player playerToDestroy;
-    
+        private int statesToHave;
+
+        private Player playerToDestroy;
+
+    }
 }

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ContinentEnum 
+namespace com.xenturio.enums
 {
-    NORD_AMERICA,
-    SUD_AMERICA,
-    EUROPE,
-    ASIA,
-    AFRICA,
-    OCEANIA
+    public enum ContinentEnum
+    {
+        NORD_AMERICA,
+        SUD_AMERICA,
+        EUROPE,
+        ASIA,
+        AFRICA,
+        OCEANIA
+    }
 }

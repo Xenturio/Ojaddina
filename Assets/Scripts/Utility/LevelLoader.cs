@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using com.xenturio.enums;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,7 +23,20 @@ public class LevelLoader : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene(ScreenEnum.MAIN_GAME);
+        SceneManager.LoadScene(SceneEnum.MAIN_GAME);
+    }
+
+    public void StartNewMultiplayerGame()
+    {
+        SceneManager.LoadScene(SceneEnum.MULTIPLAYER_MAIN_GAME);
+    }
+
+    public void ConnectNetworkScene() {
+        SceneManager.LoadScene(SceneEnum.CONNECT_SCENE);
+    }
+
+    public void JoinMultiplayerGame() {
+        SceneManager.LoadScene(SceneEnum.WAITING_ROOM);
     }
 
     public void LoadSavedGame()
@@ -31,11 +45,11 @@ public class LevelLoader : MonoBehaviour
     }
 
     public void StartBattleField() {
-        SceneManager.LoadScene(ScreenEnum.BATTLEFIELD, LoadSceneMode.Additive);
+        SceneManager.LoadScene(SceneEnum.BATTLEFIELD, LoadSceneMode.Additive);
     }
 
     public void ReturnToMainGame() {
-        SceneManager.UnloadScene(ScreenEnum.BATTLEFIELD);
+        SceneManager.UnloadSceneAsync(SceneEnum.BATTLEFIELD);
     }
 
     public void LoadNextScene()
@@ -45,7 +59,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLoseScreen()
     {
-        SceneManager.LoadScene(ScreenEnum.LOSE_SCREEN);
+        SceneManager.LoadScene(SceneEnum.LOSE_SCREEN);
     }
 
     public void RestartLevel()
@@ -55,12 +69,12 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(ScreenEnum.START_SCREEN);
+        SceneManager.LoadScene(SceneEnum.START_SCREEN);
     }
 
     public void LoadOptionsScreen()
     {
-        SceneManager.LoadScene(ScreenEnum.OPTIONS_SCREEN);
+        SceneManager.LoadScene(SceneEnum.OPTIONS_SCREEN);
     }
 
     public void QuitGame()

@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BonusCardTypeEnum 
+namespace com.xenturio.enums
 {
-    INFANTRY,
-    ARTILLERY,
-    CAVALRY,
-    JOLLY
+    public enum BonusCardTypeEnum
+    {
+        INFANTRY,
+        ARTILLERY,
+        CAVALRY,
+        JOLLY
+    }
 }
