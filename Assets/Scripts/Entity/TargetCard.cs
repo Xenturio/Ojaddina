@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace com.xenturio.entity
 {
+    [System.Serializable]
     public class TargetCard : MonoBehaviour
     {
 
@@ -12,7 +13,7 @@ namespace com.xenturio.entity
 
         private int statesToHave;
 
-        private Player playerToDestroy;
+        private PlayerData playerToDestroy;
 
     }
 }

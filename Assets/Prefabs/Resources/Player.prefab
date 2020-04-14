@@ -44,6 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c19e6a9318186d44b3d5832b4240ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  armies: 0
+  armiesPerTurn: 0
+  startArmiesCount: 20
 --- !u!114 &6658174377827474908
 MonoBehaviour:
   m_ObjectHideFlags: 0

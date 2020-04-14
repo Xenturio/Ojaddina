@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,28 +19,31 @@ namespace com.xenturio.multiplayer
         // Start is called before the first frame update
         void Start()
         {
+            if (!PhotonNetwork.IsConnected) {
+                FindObjectOfType<LevelLoader>().LoadMainMenu();
+            }
             List<Dropdown.OptionData> optionDatas = new List<Dropdown.OptionData>();
             for (var ic = 0; ic < GameSettings.playerColors.Length; ic++)
             {
-                optionDatas.Insert(ic, new Dropdown.OptionData(GameSettings.playerColorsName[ic].ToString()));
+                optionDatas.Insert(ic, new Dropdown.OptionData(GameUtils.GetColorName(GameSettings.playerColors[ic])));
             }
             startButton.gameObject.SetActive(false);
             int i = 0;
             foreach (GameObject table in playersTable)
             {
                 Dropdown dropdown = table.GetComponentInChildren<Dropdown>();
+                dropdown.name = "Dropdown-"+ i;
                 dropdown.AddOptions(optionDatas);
                 dropdown.interactable = PhotonNetwork.IsMasterClient;
                 dropdown.value = i;
                 dropdown.onValueChanged.AddListener(delegate
                 {
-                    HandleColor();
+                    HandleColor(null);
                 });
-                //dropdown.gameObject.SetActive(PhotonNetwork.IsMasterClient);
                 table.GetComponentInChildren<Text>().text = NO_PLAYER;
                 i++;
             }
-            HandleColor();
+            HandleColor(null);
         }
 
         // Update is called once per frame
@@ -53,29 +57,14 @@ namespace com.xenturio.multiplayer
                 {
                     playersTable[i].GetComponentInChildren<Text>().text = string.IsNullOrEmpty(player.Value.NickName) ? player.Value.UserId : player.Value.NickName;
                 }
-                if (player.Value.CustomProperties.ContainsKey("Color"))
+                if (player.Value.CustomProperties.ContainsKey(NetworkCustomProperties.PLAYER_COLOR))
                 {
-                    playersTable[i].GetComponentInChildren<Text>().color = GameSettings.playerColors[(int)player.Value.CustomProperties["Color"]];
+                    playersTable[i].GetComponentInChildren<Text>().color = GameSettings.playerColors[(int)player.Value.CustomProperties[NetworkCustomProperties.PLAYER_COLOR]];
                 }
+                playersTable[i].GetComponentInChildren<Dropdown>().name = player.Value.NickName;
                 i++;
             }
-        }
-
-
-        public void HandleReadyButton()
-        {
-
-            int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties["PlayersReady"];
-            if (readyButton.isOn)
-            {
-                playersReady++;
-            }
-            else if (playersReady > 0)
-            {
-                playersReady--;
-            }
-            PhotonNetwork.CurrentRoom.CustomProperties["PlayersReady"] = playersReady;
-            PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
+            int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY];
             if (playersReady == PhotonNetwork.CurrentRoom.Players.Count)
             {
                 startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
@@ -86,28 +75,46 @@ namespace com.xenturio.multiplayer
             }
         }
 
-        public void HandleColor()
+
+        public void HandleReadyButton()
+        {
+
+            int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY];
+            if (readyButton.isOn)
+            {
+                playersReady++;
+            }
+            else if (playersReady > 0)
+            {
+                playersReady--;
+            }
+            PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY] = playersReady;
+            PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
+        }
+
+        public void HandleColor(Dropdown change)
         {
             int i = 0;
             foreach (KeyValuePair<int, Photon.Realtime.Player> player in PhotonNetwork.CurrentRoom.Players)
             {
                 Color color = Color.black;
+                //{ Color.black, /*Blue*/new Color32(0, 114, 255, 255), Color.green, Color.yellow, Color.red, new Color(226, 0, 225, 225) }
                 switch (playersTable[i].GetComponentInChildren<Dropdown>().value)
                 {
                     case 0:
                         color = Color.black;
                         break;
                     case 1:
-                        color = Color.yellow;
+                        color = new Color32(0, 114, 255, 255);
                         break;
                     case 2:
-                        color = Color.red;
-                        break;
-                    case 3:
                         color = Color.green;
                         break;
+                    case 3:
+                        color = Color.yellow;
+                        break;
                     case 4:
-                        color = Color.blue;
+                        color = Color.red;
                         break;
                     case 5:
                         color = new Color(226, 0, 225, 225);
@@ -126,13 +133,13 @@ namespace com.xenturio.multiplayer
                         break;
                     }
                 }
-                if (player.Value.CustomProperties.ContainsKey("Color"))
+                if (player.Value.CustomProperties.ContainsKey(NetworkCustomProperties.PLAYER_COLOR))
                 {
-                    player.Value.CustomProperties["Color"] = colorIndex;
+                    player.Value.CustomProperties[NetworkCustomProperties.PLAYER_COLOR] = colorIndex;
                 }
                 else
                 {
-                    player.Value.CustomProperties.Add("Color", colorIndex);
+                    player.Value.CustomProperties.Add(NetworkCustomProperties.PLAYER_COLOR, colorIndex);
                 }
                 player.Value.SetCustomProperties(player.Value.CustomProperties);
             }
@@ -165,7 +172,6 @@ namespace com.xenturio.multiplayer
                 }
                 i++;
             }
-            PhotonNetwork.LeaveRoom();
             PhotonNetwork.Disconnect();
             FindObjectOfType<LevelLoader>().LoadMainMenu();
         }

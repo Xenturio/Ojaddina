@@ -1,4 +1,5 @@
-﻿using com.xenturio.enums;
+﻿
+using com.xenturio.enums;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
@@ -26,6 +27,13 @@ public class Launcher : MonoBehaviourPunCallbacks
     [Tooltip("The UI Loader Anime")]
     [SerializeField]
     private LoaderAnime loaderAnime;
+
+    [Tooltip("The player nickname")]
+    [SerializeField]
+    private InputField playerInputField;
+
+    [SerializeField]
+    private Button connectButton;
 
     #endregion
 
@@ -62,6 +70,22 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     }
 
+    void Start() {
+
+        string defaultName = "";
+
+        if (playerInputField != null)
+        {
+            if (PlayerPrefsController.GetPlayerNickname() != null)
+            {
+                defaultName = PlayerPrefsController.GetPlayerNickname();
+                playerInputField.text = defaultName;
+            }
+        }
+
+        PhotonNetwork.NickName = defaultName;
+        connectButton.interactable = !string.IsNullOrWhiteSpace(playerInputField.text);
+    }
     #endregion
 
 
@@ -121,6 +145,18 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         // add new messages as a new line and at the bottom of the log.
         feedbackText.text += System.Environment.NewLine + message;
+    }
+
+    /// <summary>
+    /// Sets the name of the player, and save it in the PlayerPrefs for future sessions.
+    /// </summary>
+    /// <param name="value">The name of the Player</param>
+    public void SetPlayerName(string value)
+    {
+        // #Important
+        PhotonNetwork.NickName = value + " "; // force a trailing space string in case value is an empty string, else playerName would not be updated.
+        PlayerPrefsController.SetPlayerNickname(value);
+        connectButton.interactable = !string.IsNullOrWhiteSpace(playerInputField.text);
     }
 
     #endregion
@@ -198,11 +234,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.\nFrom here on, your game would be running.");
 
         // #Critical: We only load if we are the first player, else we rely on  PhotonNetwork.AutomaticallySyncScene to sync our instance scene.
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1 && PhotonNetwork.IsConnected)
         {
             Debug.Log("We load the 'Room for 1' ");
             ExitGames.Client.Photon.Hashtable roomProp = PhotonNetwork.CurrentRoom.CustomProperties;
-            roomProp.Add("PlayersReady", 0);
+            //Gestisce il ready nella waiting room
+            roomProp.Add(NetworkCustomProperties.ROOM_PLAYERS_READY, 0);
+            //Gestisce i giocatoti nel mainGame se sono entrati o meno
+            roomProp.Add(NetworkCustomProperties.GAME_PLAYERS_LOADED, 0);
             PhotonNetwork.CurrentRoom.SetCustomProperties(roomProp);
             // #Critical
             // Load the Room Level. 

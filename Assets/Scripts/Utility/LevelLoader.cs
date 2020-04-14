@@ -69,6 +69,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(SceneEnum.START_SCREEN);
     }
 

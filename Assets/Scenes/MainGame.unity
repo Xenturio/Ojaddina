@@ -360,19 +360,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 890497265}
+      objectReference: {fileID: 1499600027}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1849365796}
+      objectReference: {fileID: 285753755}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1685762900}
+      objectReference: {fileID: 890497265}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1499600027}
+      objectReference: {fileID: 1685762900}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -398,26 +418,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -794,6 +794,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[5]
       value: 
       objectReference: {fileID: 1430396646}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -819,26 +839,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -1013,15 +1013,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 2076299979}
+      objectReference: {fileID: 890497265}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 890497265}
+      objectReference: {fileID: 1314100920}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1314100920}
+      objectReference: {fileID: 2076299979}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1047,26 +1067,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -1203,15 +1203,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 438328927}
+      objectReference: {fileID: 1102313233}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1102313233}
+      objectReference: {fileID: 438328927}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 584023270}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1237,26 +1257,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -1588,6 +1588,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 890497265}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1613,26 +1633,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -1786,6 +1786,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 484951154}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -1811,26 +1831,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -1994,6 +1994,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[3]
       value: 
       objectReference: {fileID: 484951154}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2019,26 +2039,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -2267,7 +2267,7 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1102313233}
+      objectReference: {fileID: 251978742}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: territoryName
       value: Nuova Guinea
@@ -2280,6 +2280,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 584023270}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2305,26 +2325,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -2462,7 +2462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: continent
@@ -2479,19 +2479,47 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1370019853}
+      objectReference: {fileID: 1702939788}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 519270183}
+      objectReference: {fileID: 708132391}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1702939788}
+      objectReference: {fileID: 519270183}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 708132391}
+      objectReference: {fileID: 484951154}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[5]
+      value: 
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -2517,26 +2545,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -3109,11 +3117,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1370019853}
+      objectReference: {fileID: 1128925994}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1128925994}
+      objectReference: {fileID: 1370019853}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3139,26 +3167,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -3321,15 +3329,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1330341851}
+      objectReference: {fileID: 112033284}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1176124564}
+      objectReference: {fileID: 1330341851}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 112033284}
+      objectReference: {fileID: 1176124564}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3355,26 +3383,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -3617,11 +3625,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 251978742}
+      objectReference: {fileID: 438328927}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 438328927}
+      objectReference: {fileID: 251978742}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3647,26 +3675,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -3849,19 +3857,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 581176442}
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1387167540}
+      objectReference: {fileID: 1098553721}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 1098553721}
+      objectReference: {fileID: 1387167540}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[5]
       value: 
-      objectReference: {fileID: 2015969707}
+      objectReference: {fileID: 581176442}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -3887,26 +3915,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -4136,6 +4144,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[4]
       value: 
       objectReference: {fileID: 77883993}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4161,26 +4189,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -4323,7 +4331,7 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1370019853}
+      objectReference: {fileID: 77883993}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: continent
       value: 3
@@ -4331,15 +4339,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 2015969707}
+      objectReference: {fileID: 1370019853}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 77883993}
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
       objectReference: {fileID: 1102313233}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4365,26 +4393,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -4583,6 +4591,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[1]
       value: 
       objectReference: {fileID: 1190991463}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -4608,26 +4636,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -4975,7 +4983,7 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 104148861}
+      objectReference: {fileID: 112033284}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: territoryName
       value: Territori del N.O.
@@ -4987,15 +4995,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 112033284}
+      objectReference: {fileID: 1849365796}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1849365796}
+      objectReference: {fileID: 1499600027}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1499600027}
+      objectReference: {fileID: 104148861}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5021,26 +5049,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -5663,7 +5671,7 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 285753755}
+      objectReference: {fileID: 1811538658}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
@@ -5671,11 +5679,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 707412134}
+      objectReference: {fileID: 285753755}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1811538658}
+      objectReference: {fileID: 707412134}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5701,26 +5729,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -5959,19 +5967,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1330341851}
+      objectReference: {fileID: 484951154}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 484951154}
+      objectReference: {fileID: 1330341851}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1128925994}
+      objectReference: {fileID: 350303020}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 350303020}
+      objectReference: {fileID: 1128925994}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -5997,26 +6025,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -6293,11 +6301,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1499600027}
+      objectReference: {fileID: 1685762900}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1685762900}
+      objectReference: {fileID: 1499600027}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6323,26 +6351,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -6586,27 +6594,47 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1849365796}
+      objectReference: {fileID: 1811538658}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1811538658}
+      objectReference: {fileID: 112033284}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 112033284}
+      objectReference: {fileID: 1849365796}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 285753755}
+      objectReference: {fileID: 890497265}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 890497265}
+      objectReference: {fileID: 1314100920}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[5]
       value: 
-      objectReference: {fileID: 1314100920}
+      objectReference: {fileID: 285753755}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6632,26 +6660,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -6800,19 +6808,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1128925994}
+      objectReference: {fileID: 1176124564}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 4736507}
+      objectReference: {fileID: 1330341851}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1330341851}
+      objectReference: {fileID: 1128925994}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 1176124564}
+      objectReference: {fileID: 4736507}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -6838,26 +6866,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -7016,15 +7024,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 77883993}
+      objectReference: {fileID: 1098553721}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1098553721}
+      objectReference: {fileID: 77883993}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 251978742}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7050,26 +7078,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -7526,11 +7534,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1098553721}
+      objectReference: {fileID: 77883993}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 77883993}
+      objectReference: {fileID: 1098553721}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7556,26 +7584,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -7730,11 +7738,11 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1430396646}
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 2015969707}
+      objectReference: {fileID: 1430396646}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
@@ -7743,6 +7751,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[5]
       value: 
       objectReference: {fileID: 1102313233}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -7768,26 +7796,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -8174,15 +8182,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1894390630}
+      objectReference: {fileID: 634619567}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 77883993}
+      objectReference: {fileID: 1894390630}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 634619567}
+      objectReference: {fileID: 77883993}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8208,26 +8236,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -8387,6 +8395,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 708132391}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8412,26 +8440,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -8587,6 +8595,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[1]
       value: 
       objectReference: {fileID: 1387167540}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8612,26 +8640,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -8803,6 +8811,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 68403620}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -8828,26 +8856,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -8992,19 +9000,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 707412134}
+      objectReference: {fileID: 4736507}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1176124564}
+      objectReference: {fileID: 707412134}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 350303020}
+      objectReference: {fileID: 1176124564}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 4736507}
+      objectReference: {fileID: 350303020}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9030,26 +9058,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -9295,15 +9303,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 634619567}
+      objectReference: {fileID: 960089414}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 960089414}
+      objectReference: {fileID: 634619567}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
       objectReference: {fileID: 1687974712}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9329,26 +9357,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -9527,11 +9535,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1625277651}
+      objectReference: {fileID: 634619567}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 634619567}
+      objectReference: {fileID: 1625277651}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9557,26 +9585,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -9731,23 +9739,43 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 581176442}
+      objectReference: {fileID: 4736507}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 484951154}
+      objectReference: {fileID: 1176021453}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1176021453}
+      objectReference: {fileID: 1370019853}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 4736507}
+      objectReference: {fileID: 484951154}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[5]
       value: 
-      objectReference: {fileID: 1370019853}
+      objectReference: {fileID: 1702939788}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -9773,26 +9801,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -9992,6 +10000,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[3]
       value: 
       objectReference: {fileID: 350303020}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10017,26 +10045,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -10187,15 +10195,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 218071645}
+      objectReference: {fileID: 2076299979}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 2076299979}
+      objectReference: {fileID: 77908597}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 77908597}
+      objectReference: {fileID: 218071645}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10221,26 +10249,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -10377,7 +10385,7 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1811538658}
+      objectReference: {fileID: 104148861}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: continent
       value: 0
@@ -10389,15 +10397,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 1499600027}
+      objectReference: {fileID: 1811538658}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 1314100920}
+      objectReference: {fileID: 1499600027}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 104148861}
+      objectReference: {fileID: 1314100920}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10423,26 +10451,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -10687,11 +10695,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 584023270}
+      objectReference: {fileID: 438328927}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 438328927}
+      objectReference: {fileID: 584023270}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -10717,26 +10745,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -11080,7 +11088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: continent
@@ -11101,7 +11109,31 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
+      objectReference: {fileID: 1687974712}
+    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
+      propertyPath: neighborTerritories.Array.data[4]
+      value: 
       objectReference: {fileID: 1894390630}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11127,26 +11159,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -11297,19 +11309,39 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
-      objectReference: {fileID: 1176021453}
+      objectReference: {fileID: 2015969707}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[1]
       value: 
-      objectReference: {fileID: 634619567}
+      objectReference: {fileID: 1176021453}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[2]
       value: 
-      objectReference: {fileID: 77883993}
+      objectReference: {fileID: 634619567}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 2015969707}
+      objectReference: {fileID: 77883993}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11335,26 +11367,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -11578,15 +11590,35 @@ PrefabInstance:
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[3]
       value: 
-      objectReference: {fileID: 1387167540}
+      objectReference: {fileID: 1128925994}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[4]
       value: 
-      objectReference: {fileID: 1128925994}
+      objectReference: {fileID: 4736507}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[5]
       value: 
-      objectReference: {fileID: 4736507}
+      objectReference: {fileID: 1387167540}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -11612,26 +11644,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -12033,6 +12045,26 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[1]
       value: 
       objectReference: {fileID: 77908597}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: selectedTerritoryText
+      value: 
+      objectReference: {fileID: 1537152850}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: targetTerritoryText
+      value: 
+      objectReference: {fileID: 18707148}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: arrowFromTo
+      value: 
+      objectReference: {fileID: 2086497125}
+    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
+        type: 3}
+      propertyPath: attackMoveBtn
+      value: 
+      objectReference: {fileID: 1063603915}
     - target: {fileID: 586834006172346110, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: m_Layer
@@ -12058,26 +12090,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
     - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
         type: 3}
       propertyPath: viewIdField
@@ -12187,6 +12199,12 @@ PrefabInstance:
       propertyPath: moveSlider
       value: 
       objectReference: {fileID: 875960923}
+    - target: {fileID: 4503524185166686175, guid: d44303bf1b678104981a6de865c4681b,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 6658174377827474911, guid: f60f989d726edf2428c8c640ace3dbec,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d44303bf1b678104981a6de865c4681b, type: 3}
 --- !u!1001 &4614973844658457782
@@ -12307,14 +12325,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: neighborTerritories.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: territoryName
-      value: Alaska
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
       propertyPath: neighborTerritories.Array.data[0]
       value: 
       objectReference: {fileID: 1811538658}
@@ -12326,76 +12336,5 @@ PrefabInstance:
       propertyPath: neighborTerritories.Array.data[2]
       value: 
       objectReference: {fileID: 1190991463}
-    - target: {fileID: 8752384, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}
-      propertyPath: continent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: selectedTerritoryText
-      value: 
-      objectReference: {fileID: 1537152850}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: targetTerritoryText
-      value: 
-      objectReference: {fileID: 18707148}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: arrowFromTo
-      value: 
-      objectReference: {fileID: 2086497125}
-    - target: {fileID: -4636919712373471706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: attackMoveBtn
-      value: 
-      objectReference: {fileID: 1063603915}
-    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d,
-        type: 3}
-    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d,
-        type: 3}
-    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614973844649902518, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Transition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4763298525965876706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4763298525965876706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.44710803
-      objectReference: {fileID: 0}
-    - target: {fileID: 4763298525965876706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4763298525965876706, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6020648326553615027, guid: 4e61374c8aa0c9246909c9390b68046a,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e61374c8aa0c9246909c9390b68046a, type: 3}

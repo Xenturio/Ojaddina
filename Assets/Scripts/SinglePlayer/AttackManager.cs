@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace com.xenturio.singleplayer
+namespace com.xenturio.basegame
 {
     public class AttackManager : MonoBehaviour
     {
@@ -39,7 +39,7 @@ namespace com.xenturio.singleplayer
             StartAttack();
             SetAttackersCount(false);
             SetDefenderCount();
-            attackerSlider.gameObject.GetComponentInChildren<Text>().text = attacker.Player.PlayerName;
+            attackerSlider.gameObject.GetComponentInChildren<Text>().text = attacker.Player.GetPlayerName();
             attackerSlider.gameObject.GetComponentInChildren<Text>().color = attacker.Player.GetPlayerColor();
         }
 
@@ -109,14 +109,14 @@ namespace com.xenturio.singleplayer
             if (currentAttackerTanks <= 0 && maxAttackerTanks <= 1)
             {
                 resultText.color = defender != null ? defender.GetPlayerColor() : Color.blue;
-                resultText.text = (defender != null ? defender.Player.PlayerName : "Defender") + " WIN";
+                resultText.text = (defender != null ? defender.Player.GetPlayerName() : "Defender") + " WIN";
                 gameManager.SetDesinationTerritory(null);
                 StartCoroutine(EndBattle());
             }
             else if (currentDefenderTanks <= 0 && maxDefenderTanks <= 0)
             {
                 resultText.color = attacker != null ? attacker.GetPlayerColor() : Color.red;
-                resultText.text = (attacker != null ? attacker.Player.PlayerName : "Attacker") + " WIN";
+                resultText.text = (attacker != null ? attacker.Player.GetPlayerName() : "Attacker") + " WIN";
                 defenderTerritory.SetOwner(attacker);
                 defenderTerritory.AddArmies(currentAttackerTanks);
                 gameManager.SetSelectedTerritory(defenderTerritory);

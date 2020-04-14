@@ -2,16 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace com.xenturio.entity
 {
     public class TerritoryCard : MonoBehaviour
     {
-        private Territory territory;
+        private TerritoryData territory;
 
         private BonusCardTypeEnum bonusType;
 
-        public TerritoryCard(Territory territory)
+        public TerritoryCard(TerritoryData territory)
         {
             this.territory = territory;
         }

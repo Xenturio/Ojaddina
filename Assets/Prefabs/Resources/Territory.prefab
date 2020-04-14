@@ -294,8 +294,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: b67842072f237164aac498cf81d511f0, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: b67842072f237164aac498cf81d511f0, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 674f6de8a21379d4dba58a2f726f658d, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -322,11 +322,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a99423db06ad3498d532d02308a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  territoryName: 
-  continent: 5
-  neighborTerritories: []
-  highlightedColor: {r: 1, g: 1, b: 1, a: 1}
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  territoryName: Alaska
+  continent: 0
+  neighborTerritories:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &-4636919712373471706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +412,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 6719877630809283541, guid: 24e15465922868e43bef56bef1fd1a1d,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.44710803, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
