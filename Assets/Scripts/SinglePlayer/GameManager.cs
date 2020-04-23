@@ -22,9 +22,9 @@ namespace com.xenturio.basegame
         [SerializeField] protected GameObject playerPrefab;
         [SerializeField] protected GameObject loaderCanvas;
         [SerializeField] protected Text localPlayerText;
-        [SerializeField] protected Text localPlayerArmiesCount;
         [SerializeField] protected Text localPlayerTerritoriesCountText;
         [SerializeField] protected GameObject territoriesContainer;
+        [SerializeField] protected GameObject battleFieldCanvas;
 
         protected List<PlayerController> players = new List<PlayerController>();
 
@@ -41,9 +41,9 @@ namespace com.xenturio.basegame
 
         protected TerritoryController[] territories;
 
-        protected int allStartArmies = 0;
-
         protected int armiesToMove = 0;
+
+        private LineRenderer line;
 
         protected LevelLoader levelLoader;
 
@@ -55,6 +55,7 @@ namespace com.xenturio.basegame
         void Awake()
         {
             DontDestroyOnLoad(this);
+            battleFieldCanvas.gameObject.SetActive(false);
             levelLoader = FindObjectOfType<LevelLoader>();
             selectedTerritoryText.gameObject.SetActive(false);
             targetTerritoryText.gameObject.SetActive(false);
@@ -62,6 +63,7 @@ namespace com.xenturio.basegame
             attackMoveBtn.gameObject.SetActive(false);
             moveSlider.gameObject.SetActive(false);
             territories = territoriesContainer.GetComponentsInChildren<TerritoryController>();
+            
         }
         // Start is called before the first frame update
         void Start()
@@ -81,7 +83,7 @@ namespace com.xenturio.basegame
             if (GameStatesController.IsSetupGame())
             {
                 GameStatesController.NextState();
-                currentPlayerController.CalcReinforcmentArmies();
+                CalcReinforcmentArmies();
                 UpdateTerritoriesInfo();
             }
         }
@@ -105,6 +107,7 @@ namespace com.xenturio.basegame
             {
                 GameObject newPlayer = Instantiate(playerPrefab, transform, true);
                 newPlayer.gameObject.GetComponent<PlayerController>().Player.SetPlayerName("Giocatore " + (i + 1));
+                newPlayer.gameObject.AddComponent<EnemyAI>();
                 players.Add(newPlayer.gameObject.GetComponent<PlayerController>());
             }
         }
@@ -133,7 +136,7 @@ namespace com.xenturio.basegame
         public void StartPositioning()
         {
             GameStatesController.StartGameState();
-            currentPlayerController.CalcReinforcmentArmies();            
+            CalcReinforcmentArmies();            
             //Dispone automaticamente le armate
             AutoStartPositioning();
         }
@@ -184,12 +187,12 @@ namespace com.xenturio.basegame
 
         protected void DistributeArmies()
         {
+            if (players == null || players.Count == 0) { return; }
             int startArmies = 20 + ((6 - players.Count) * 5);
-            allStartArmies = startArmies * players.Count;
             foreach (PlayerController player in players)
             {
                 player.AddArmies(startArmies);
-                player.SetStartArmiesCount(startArmies - player.GetTerritoriesOwned().Count);
+                player.SetStartArmiesCount(startArmies - player.GetTerritoriesOwned().Count);                
             }
         }
       
@@ -289,7 +292,7 @@ namespace com.xenturio.basegame
                     GameStatesController.NextState();
                 }
                 SetNextPlayer();
-                currentPlayerController.CalcReinforcmentArmies();
+                CalcReinforcmentArmies();
                 selectedTerritoy = null;
                 DestinationTerritory = null;
                 SelectedDefenderController = null;
@@ -333,9 +336,16 @@ namespace com.xenturio.basegame
             return this.destinationTerritory;
         }
 
+        public void SetTerritoryOwner(TerritoryController tc, PlayerController pc, bool sendEvent)
+        {
+            tc.SetOwner(pc);
+            pc.AddTerritory(tc.Territory);
+        }
+
         protected void StartAttack()
         {
-            levelLoader.StartBattleField();
+            battleFieldCanvas.gameObject.SetActive(true);
+            //levelLoader.StartBattleField();
         }
 
         protected void CompleteMove() {
@@ -355,6 +365,7 @@ namespace com.xenturio.basegame
                 bool canStart = true;
                 foreach (PlayerController player in players)
                 {
+                    Debug.Log(player.GetPlayer().GetPlayerName() + " ha ancora " + player.GetStartArmiesCount() + " armate da sistemare");
                     if (player.GetStartArmiesCount() > 0)
                     {
                         canStart = false;
@@ -363,10 +374,7 @@ namespace com.xenturio.basegame
                 }
                 return canStart;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
 
@@ -479,12 +487,63 @@ namespace com.xenturio.basegame
 
         }
         #endregion
-        public bool IsMyTurn()
+        public bool IsMyTurn() {
+            return IsMyTurn(null);
+        }
+
+        public bool IsMyTurn(PlayerController ai)
         {
+            if (ai != null) {
+                return currentPlayerController != null && currentPlayerController.GetPlayer() != null && ai.Player.GetPlayerName().Equals(currentPlayerController.GetPlayer().GetPlayerName());
+            }
             return currentPlayerController != null && currentPlayerController.GetPlayer() != null && localPlayerText.text.Equals(currentPlayerController.GetPlayer().GetPlayerName());
         }
 
         public void RaiseEvent(object data, byte code, object subject, ExitGames.Client.Photon.Hashtable evData, bool master) { }
+
+        public void CalcReinforcmentArmies()
+        {
+            var armiesPerTurn = CalculateReinforcmentArmies();
+            currentPlayerController.AddArmyPerTurn(armiesPerTurn);
+            //Numero di stati diviso 3
+            if (GameStatesController.IsSetupGame() && currentPlayerController.GetStartArmiesCount() > 0)
+            {
+                currentPlayerController.SetStartArmiesCount(currentPlayerController.GetStartArmiesCount() - armiesPerTurn);
+            }
+        }
+
+        public int CalculateReinforcmentArmies()
+        {
+            //Numero di stati diviso 3
+            if (GameStatesController.IsSetupGame() && currentPlayerController.GetStartArmiesCount() > 0)
+            {
+                var armiesToAdd = currentPlayerController.GetStartArmiesCount() > 3 ? 3 : currentPlayerController.GetStartArmiesCount();
+                return armiesToAdd;
+            }
+            else if (GameStatesController.IsReinforce())
+            {
+                var territoriesOwned = currentPlayerController.GetTerritoriesOwned();
+                var listTerritories = new List<TerritoryController>(territories);
+                var armies = Mathf.FloorToInt(territoriesOwned.Count / 3);
+                //Controllo se ho tutti i territori di un continente
+                var hasAsia = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.ASIA).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.ASIA).Count;
+                var hasEurope = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.EUROPE).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.EUROPE).Count;
+                var hasAmerica = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.NORD_AMERICA).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.NORD_AMERICA).Count;
+                var hasSudAmerica = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.SUD_AMERICA).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.SUD_AMERICA).Count;
+                var hasAfrica = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.AFRICA).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.AFRICA).Count;
+                var hasOceania = territoriesOwned.FindAll(x => x.GetContinent() == ContinentEnum.OCEANIA).Count == listTerritories.FindAll(x => x.Territory.GetContinent() == ContinentEnum.OCEANIA).Count;
+
+                if (hasAfrica) { armies += GameSettings.AFRICA_ARMY; }
+                if (hasAsia) { armies += GameSettings.ASIA_ARMY; }
+                if (hasAmerica) { armies += GameSettings.AMERICA_ARMY; }
+                if (hasSudAmerica) { armies += GameSettings.SUDAMERICA_ARMY; }
+                if (hasOceania) { armies += GameSettings.OCEANIA_ARMY; }
+                if (hasEurope) { armies += GameSettings.EUROPE_ARMY; }
+
+                return armies;
+            }
+            return 0;
+        }
 
     }
 }

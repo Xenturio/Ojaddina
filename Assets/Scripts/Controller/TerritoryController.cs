@@ -9,26 +9,15 @@ namespace com.xenturio.basegame
 {
     public class TerritoryController : MonoBehaviour, UnityEngine.EventSystems.IPointerClickHandler
     {
-
-        [SerializeField] protected Sprite selectedSprite;
-
-        [SerializeField] protected Sprite alternativeSprite;
-
-        protected Sprite baseSprite;
-
+        
         protected TerritoryData territory;
 
         protected GameManager gameManager;
 
         private MultiplayerGameManager multiplayerGameManager;
 
-        protected TerritoryTextName textName;
-
         private PlayerController ownerController;
-
-        protected bool hasSelectedSprite = false;
-        protected bool hasAlternativeSprite = false;
-
+        
         public TerritoryData Territory { get => territory; set => territory = value; }
         public PlayerController OwnerController { get => ownerController; set => ownerController = value; }
 
@@ -36,21 +25,13 @@ namespace com.xenturio.basegame
         {
             multiplayerGameManager = FindObjectOfType<MultiplayerGameManager>();
             gameManager = FindObjectOfType<GameManager>();
-            textName = GetComponentInChildren<TerritoryTextName>();
             territory = GetComponent<TerritoryData>();
-            baseSprite = GetComponent<Button>().image.sprite;
-            GetComponentInChildren<Text>().text = territory.GetTerritoryName();
         }
 
         // Start is called before the first frame update
         void Start()
         {            
             UpdateArmyDisplay();
-        }
-
-        private void OnDestroy()
-        {
-            Debug.Log("Chi cazzo è stato?");
         }
 
         public TerritoryData GetTerritory()
@@ -114,23 +95,20 @@ namespace com.xenturio.basegame
             }
         }
 
+        /**
+         * Lose armies after battle.
+         * */
         public void LoseArmies(int armies)
         {
-            if (territory.GetArmies() > 1)
-            {
-                ownerController.LostArmies(armies);
-                RemoveArmies(armies);
-            }
+            ownerController.LostArmies(armies);
+            RemoveArmies(armies);
         }
 
         public void SetOwner(PlayerController owner)
         {
             ownerController = owner;
             territory.SetOwner(owner.GetPlayer());
-            textName.SetColorPlayerText();
-            SetTankSpriteColor();
-            if (multiplayerGameManager)
-                multiplayerGameManager.RaiseEvent(owner.GetPlayer().GetPlayerName(), EventNetwork.TERRITORY_SET_OWNER, Territory.GetTerritoryName(), null, false);
+            SetTankSpriteColor();            
         }
 
         protected void SetTankSpriteColor() {
@@ -147,6 +125,7 @@ namespace com.xenturio.basegame
             if (IsSelectableTerritory())
             {
                 GetGameManager().SetSelectedTerritory(this);
+                CmdEventSelectTerritory(this.Territory);
             }
         }
 
@@ -205,9 +184,9 @@ namespace com.xenturio.basegame
 
         protected void UpdateArmyDisplay()
         {
-            if (this.gameObject && this.gameObject.GetComponentInChildren<TextArmy>())
+            if (this.gameObject && this.gameObject.GetComponentInChildren<Text>())
             {
-                this.gameObject.GetComponentInChildren<TextArmy>().UpdateArmyNumber(territory.GetArmies());
+                this.gameObject.GetComponentInChildren<Text>().text = "" + territory.GetArmies();
             }
             else {
                 Debug.LogError("UpdateArmyDisplay -> this.gameobject = " + this.gameObject + " --- TextArmy = " + this.gameObject.GetComponentInChildren<TextArmy>());
@@ -219,12 +198,14 @@ namespace com.xenturio.basegame
             if (IsAttackableTerritory())
             {
                 GetGameManager().SetDesinationTerritory(this);
+                CmdEventDestinationTerritory(this.Territory);
             }
         }
 
         protected void StopAttack()
         {
             GetGameManager().SetDesinationTerritory(null);
+            CmdEventDestinationTerritory(null);
         }
 
         protected void MoveArmy()
@@ -232,6 +213,7 @@ namespace com.xenturio.basegame
             if (GetGameManager().GetSelectedTerritory() != null && !GetGameManager().GetSelectedTerritory().Equals(this) && IsNeighbor())
             {
                 GetGameManager().SetDesinationTerritory(this);
+                CmdEventDestinationTerritory(this.Territory);
             }
         }
 
@@ -245,7 +227,6 @@ namespace com.xenturio.basegame
             if (!GetGameManager().IsMyTurn()) { return; }
             if (!ownerController) { return; }
             bool isOwner = ownerController.Equals(GetGameManager().CurrentPlayerController);
-            SplitSprite();
             if (left)
             {
                 if (isOwner && !GameStatesController.IsAttack() && !GameStatesController.IsMove())
@@ -263,6 +244,7 @@ namespace com.xenturio.basegame
             if (isOwner && GameStatesController.IsAttack())
             {
                 GetGameManager().SetSelectedTerritory(this);
+                CmdEventSelectTerritory(this.Territory);
             }
             else if (!isOwner && GameStatesController.IsAttack() && GetGameManager().GetSelectedTerritory() != null)
             {
@@ -274,7 +256,9 @@ namespace com.xenturio.basegame
                 if (GetGameManager().GetSelectedTerritory() != null && GetGameManager().GetSelectedTerritory().Equals(this))
                 {
                     GetGameManager().SetSelectedTerritory(null);
+                    CmdEventSelectTerritory(null);
                     GetGameManager().SetDesinationTerritory(null);
+                    CmdEventDestinationTerritory(null);
                 }
                 else if (GetGameManager().GetSelectedTerritory() != null)
                 {
@@ -283,9 +267,25 @@ namespace com.xenturio.basegame
                 else if (GetGameManager().GetSelectedTerritory() == null)
                 {
                     GetGameManager().SetSelectedTerritory(this);
+                    CmdEventSelectTerritory(this.Territory);
                 }
             }
 
+        }
+
+        private void CmdEventSelectTerritory(TerritoryData territory) {
+            if (multiplayerGameManager)
+            {
+                multiplayerGameManager.RaiseEvent(territory ? territory.GetTerritoryName() : null, EventNetwork.SET_SELECTED_TERRITORY, Territory.GetTerritoryName(), null, false);
+            }
+        }
+
+        private void CmdEventDestinationTerritory(TerritoryData territory)
+        {
+            if (multiplayerGameManager)
+            {
+                multiplayerGameManager.RaiseEvent(territory ? territory.GetTerritoryName() : null, EventNetwork.SET_DESTINATION_TERRITORY, Territory.GetTerritoryName(), null, false);
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -300,45 +300,7 @@ namespace com.xenturio.basegame
             }
 
         }
-
-        private void OnMouseExit()
-        {
-            SplitSprite();
-        }
-
         
-
-        protected void SplitSprite()
-        {
-
-            if (GetGameManager().GetDestinationTerritory() != null && GetGameManager().GetDestinationTerritory().Equals(this))
-            {
-                if (!hasAlternativeSprite)
-                {
-                    hasAlternativeSprite = true;
-                    hasSelectedSprite = false;
-                    GetComponent<Button>().image.sprite = alternativeSprite;
-                }
-                return;
-            }
-            if (GetGameManager().GetSelectedTerritory() != null && GetGameManager().GetSelectedTerritory().Equals(this))
-            {
-                if (!hasSelectedSprite)
-                {
-                    GetComponent<Button>().image.sprite = selectedSprite;
-                    hasSelectedSprite = true;
-                    hasAlternativeSprite = false;
-                }
-                return;
-            }
-            hasAlternativeSprite = false;
-            hasSelectedSprite = false;
-            if (!GetComponent<Button>().image.sprite.Equals(baseSprite))
-            {
-                GetComponent<Button>().image.sprite = baseSprite;
-            }
-        }
-
         private GameManager GetGameManager() {
             if (multiplayerGameManager != null) {
                 return multiplayerGameManager;

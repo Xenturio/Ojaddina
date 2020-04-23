@@ -98,9 +98,12 @@ namespace com.xenturio.basegame
         }
 
         private static void Cmd_UpdateState() {
-           ExitGames.Client.Photon.Hashtable evData = new ExitGames.Client.Photon.Hashtable();
-            evData.Add("STATE", currentState);
-            PhotonNetwork.RaiseEvent(EventNetwork.NEXT_STATE, evData, RaiseEventOptions.Default, SendOptions.SendReliable);
+            if (PhotonNetwork.IsConnected)
+            {
+                Hashtable evData = new Hashtable();
+                evData.Add("STATE", currentState);
+                PhotonNetwork.RaiseEvent(EventNetwork.NEXT_STATE, evData, RaiseEventOptions.Default, SendOptions.SendReliable);
+            }
         }
       
     }

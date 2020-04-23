@@ -11,18 +11,20 @@ public class EventNetwork : MonoBehaviour
     public const byte SET_MOVING_STATE = 6;
     public const byte SET_DESTINATION = 7;
     public const byte SET_SELECTED_TERRITORY = 8;
-    public const byte SHUFFLE_DATA = 9;
-    //Player 10-19
-    public const byte PLAYER_ADD_TERRITORY = 10;
-    public const byte PLAYER_LOST_TERRITORY = 11;
-    public const byte PLAYER_ADD_ARMY = 12;
-    public const byte PLAYER_LOST_ARMY = 13;
-    public const byte PLAYER_START_ARMIES_COUNT = 14;
-    public const byte PLAYERS_CREATED = 15;
+    public const byte SET_DESTINATION_TERRITORY = 9;
+    public const byte SHUFFLE_DATA = 10;
+    public const byte DISTRIBUTE_TERRITORIES = 11;
+    //Player 20-39
+    public const byte PLAYER_ADD_TERRITORY = 20;
+    public const byte PLAYER_LOST_TERRITORY = 21;
+    public const byte PLAYER_ADD_ARMY = 22;
+    public const byte PLAYER_LOST_ARMY = 23;
+    public const byte PLAYER_START_ARMIES_COUNT = 24;
+    public const byte PLAYERS_CREATED = 25;
 
-    //Territory 20-29
-    public const byte TERRITORY_ADD_ARMY = 20;
-    public const byte TERRITORY_LOST_ARMY = 21;
-    public const byte TERRITORY_SET_OWNER = 22;
+    //Territory 40-59
+    public const byte TERRITORY_ADD_ARMY = 40;
+    public const byte TERRITORY_LOST_ARMY = 41;
+    public const byte TERRITORY_SET_OWNER = 42;
 
 }

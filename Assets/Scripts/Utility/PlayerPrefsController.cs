@@ -6,7 +6,8 @@ using com.xenturio.enums;
 
 public class PlayerPrefsController : MonoBehaviour
 {
-    const string MASTER_VOLUME_KEY = "master.volume";
+    const string MASTER_MUSIC_VOLUME_KEY = "master.volume";
+    const string MASTER_VOLUME_UI_KEY = "master.ui.volume";
     const string MASTER_DIFFICULTY_KEY = "difficulty";
     const string SAVED_GAME_LEVEL = "saved.game.level";
     const string PLAYER_COLOR = "player.color";
@@ -18,22 +19,34 @@ public class PlayerPrefsController : MonoBehaviour
     const int MAX_DIFFICULTY = 5;
     const int MIN_DIFFICULTY = 1;
 
-    public static void SetMasterVolume(float volume)
+    public static void SetMasterMusicVolume(float volume)
     {
         if (volume >= MIN_VOLUME && volume <= MAX_VOLUME)
         {
-            PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
-            MusicPlayer player = FindObjectOfType<MusicPlayer>();
-            if (player)
+            PlayerPrefs.SetFloat(MASTER_MUSIC_VOLUME_KEY, volume);
+            if (MusicPlayer.Instance)
             {
-                player.SetVolume(volume);
+                MusicPlayer.Instance.gameObject.GetComponent<AudioSource>().volume = volume;
             }
         }
     }
 
-    public static float GetMasterVolume()
+    public static float GetMasterMusicVolume()
     {
-        return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY, 1);
+        return PlayerPrefs.GetFloat(MASTER_MUSIC_VOLUME_KEY, 1);
+    }
+
+    public static void SetMasterUIVolume(float volume)
+    {
+        if (volume >= MIN_VOLUME && volume <= MAX_VOLUME)
+        {
+            PlayerPrefs.SetFloat(MASTER_VOLUME_UI_KEY, volume);
+        }
+    }
+
+    public static float GetMasterUIVolume()
+    {
+        return PlayerPrefs.GetFloat(MASTER_VOLUME_UI_KEY, 1);
     }
 
     public static void SetDifficulty(int level)

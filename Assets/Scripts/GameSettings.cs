@@ -22,7 +22,7 @@ public class GameSettings
 
     public const int ASIA_ARMY = 7;
 
-    public const int AFRIA_ARMY = 3;
+    public const int AFRICA_ARMY = 3;
 
     public const int AMERICA_ARMY = 5;
 

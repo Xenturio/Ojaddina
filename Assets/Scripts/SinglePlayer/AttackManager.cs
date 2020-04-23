@@ -18,6 +18,7 @@ namespace com.xenturio.basegame
 
 
         GameManager gameManager;
+        multiplayer.MultiplayerGameManager multiplayerGameManager;
         PlayerController attacker;
         PlayerController defender;
         TerritoryController attackerTerritory;
@@ -35,7 +36,11 @@ namespace com.xenturio.basegame
         void Start()
         {
             levelLoader = FindObjectOfType<LevelLoader>();
-            gameManager = FindObjectOfType<GameManager>();
+            multiplayerGameManager = FindObjectOfType<multiplayer.MultiplayerGameManager>();
+            if (!multiplayerGameManager)
+            {
+                gameManager = FindObjectOfType<GameManager>();
+            }
             StartAttack();
             SetAttackersCount(false);
             SetDefenderCount();
@@ -100,7 +105,7 @@ namespace com.xenturio.basegame
         {
             resultText.color = Color.red;
             resultText.text = "Shame on you!";
-            gameManager.SetDesinationTerritory(null);
+            GetGameManager().SetDesinationTerritory(null);
             StartCoroutine(EndBattle());
         }
 
@@ -110,17 +115,17 @@ namespace com.xenturio.basegame
             {
                 resultText.color = defender != null ? defender.GetPlayerColor() : Color.blue;
                 resultText.text = (defender != null ? defender.Player.GetPlayerName() : "Defender") + " WIN";
-                gameManager.SetDesinationTerritory(null);
+                GetGameManager().SetDesinationTerritory(null);
                 StartCoroutine(EndBattle());
             }
             else if (currentDefenderTanks <= 0 && maxDefenderTanks <= 0)
             {
                 resultText.color = attacker != null ? attacker.GetPlayerColor() : Color.red;
                 resultText.text = (attacker != null ? attacker.Player.GetPlayerName() : "Attacker") + " WIN";
-                defenderTerritory.SetOwner(attacker);
+                GetGameManager().SetTerritoryOwner(defenderTerritory, attacker, true);
                 defenderTerritory.AddArmies(currentAttackerTanks);
-                gameManager.SetSelectedTerritory(defenderTerritory);
-                gameManager.SetDesinationTerritory(null);
+                GetGameManager().SetSelectedTerritory(defenderTerritory);
+                GetGameManager().SetDesinationTerritory(null);
                 StartCoroutine(EndBattle());
             }
             else
@@ -132,10 +137,10 @@ namespace com.xenturio.basegame
 
         public void StartAttack()
         {
-            this.attacker = gameManager.CurrentPlayerController;
-            this.defender = gameManager.DestinationTerritory.OwnerController;
-            this.attackerTerritory = gameManager.SelectedTerritoy;
-            this.defenderTerritory = gameManager.DestinationTerritory;
+            this.attacker = GetGameManager().CurrentPlayerController;
+            this.defender = GetGameManager().DestinationTerritory.OwnerController;
+            this.attackerTerritory = GetGameManager().SelectedTerritoy;
+            this.defenderTerritory = GetGameManager().DestinationTerritory;
 
             maxAttackerTanks = attackerTerritory.GetTerritory().GetArmies() - 1;
             maxDefenderTanks = defenderTerritory.GetTerritory().GetArmies();
@@ -146,12 +151,36 @@ namespace com.xenturio.basegame
             defenderHealth.value = maxDefenderTanks;
         }
 
-        IEnumerator EndBattle()
+        private void ClearBattlefield()
         {
 
-            yield return new WaitForSeconds(3f);
-            levelLoader.ReturnToMainGame();
+            attacker = null;
+            defender = null;
+            attackerTerritory = null;
+            defenderTerritory = null;
+            maxAttackerTanks = 3;
+            maxDefenderTanks = 3;
+            currentAttackerTanks = 1;
+            currentDefenderTanks = 1;
+            resultText.text = "";
+            foreach (Text text in attackDiceResults) {
+                text.text = "";
+            }
+            foreach (Text text in defendDiceResults)
+            {
+                text.text = "";
+            }
         }
+
+        IEnumerator EndBattle()
+        {           
+            yield return new WaitForSeconds(3f);
+            ClearBattlefield();
+            this.gameObject.SetActive(false);
+            //levelLoader.ReturnToMainGame();
+        }
+
+      
 
         public void SetAttackersCount(bool sliding)
         {
@@ -238,5 +267,13 @@ namespace com.xenturio.basegame
             defenderHealth.value = maxDefenderTanks;
         }
 
+        private GameManager GetGameManager()
+        {
+            if (multiplayerGameManager != null)
+            {
+                return multiplayerGameManager;
+            }
+            return gameManager;
+        }
     }
 }

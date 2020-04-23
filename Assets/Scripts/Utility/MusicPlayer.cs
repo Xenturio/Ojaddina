@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    private static MusicPlayer instance;
     AudioSource audioSource;
+
+    public static MusicPlayer Instance { get => instance; }
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = PlayerPrefsController.GetMasterVolume();
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        instance.gameObject.GetComponent<AudioSource>().volume = PlayerPrefsController.GetMasterMusicVolume();
+        instance.gameObject.GetComponent<AudioSource>().Play();
     }
 
-    public void SetVolume(float volume)
-    {
-        audioSource.volume = volume;
-    }
 }

@@ -8,18 +8,21 @@ using com.xenturio.basegame;
 using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
+using System;
 
 namespace com.xenturio.multiplayer
 {
     public class MultiplayerGameManager : GameManager
     {
+        
         private bool gameStarted = false;
 
-
+        #region mono methods
         void Awake()
         {
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
             levelLoader = FindObjectOfType<LevelLoader>();
+            battleFieldCanvas.gameObject.SetActive(false);
             selectedTerritoryText.gameObject.SetActive(false);
             targetTerritoryText.gameObject.SetActive(false);
             arrowFromTo.gameObject.SetActive(false);
@@ -38,30 +41,31 @@ namespace com.xenturio.multiplayer
             }
             CreatePlayers();
             localPlayerText.text = PlayerPrefsController.GetPlayerNickname();
-            localPlayerTerritoriesCountText.text = localPlayerTerritoriesCountText.text.Replace("$1" , localPlayerController.GetTerritoriesOwned().Count.ToString());
         }
-        
+
         // Update is called once per frame
         void Update()
         {
             if (!PhotonNetwork.IsConnected) { return; }
             int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.GAME_PLAYERS_LOADED];
             if (playersReady >= PhotonNetwork.CurrentRoom.PlayerCount)
-            {                
+            {
                 StartGame();
             }
             if (GameStatesController.IsNotStartedGame())
             {
                 loaderCanvas.gameObject.GetComponentInChildren<Text>().text = "Preparazione gioco...";
             }
-            if (GameStatesController.IsSetupGame()) {
-                loaderCanvas.gameObject.SetActive(false);
+            if (GameStatesController.IsSetupGame() && loaderCanvas.gameObject.activeSelf)
+            {
+                loaderCanvas.gameObject.SetActive(false);                
             }
             localPlayerTerritoriesCountText.text = localPlayerTerritoriesCountText.text.Replace("$1", localPlayerController.GetTerritoriesOwned().Count.ToString());
         }
 
         private void OnEnable()
         {
+            PhotonNetwork.NetworkingClient.EventReceived -= NetworkingClient_EventReceived;
             PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
         }
 
@@ -69,19 +73,54 @@ namespace com.xenturio.multiplayer
         {
             PhotonNetwork.NetworkingClient.EventReceived -= NetworkingClient_EventReceived;
         }
+        #endregion
 
-        private void OnDestroy()
+        public new void StartGame()
         {
-            Debug.Log("Chi cazzo è stato?");
+            if (PhotonNetwork.IsMasterClient)
+            {
+                if (players.Count > 0 && !gameStarted && GameStatesController.IsNotStartedGame())
+                {
+                    gameStarted = true;
+                    SetupMatch();
+                }
+            }
         }
 
-        new void CreatePlayers() {
+        #region SETUP GAMES
+
+        protected new void SetupMatch()
+        {
+            StartCoroutine(RunSetupMatch());
+        }
+
+        IEnumerator RunSetupMatch()
+        {
+            yield return new WaitForSeconds(1);
+            //Scelta dell'ordine dei giocatori random
+            Cmd_ShuffleData();
+            yield return new WaitForSeconds(1);
+            //Seleziono il primo giocatore
+            Cmd_SetNextPlayer();
+            yield return new WaitForSeconds(1);
+            //Distribuisco le carte territorio
+            DistributeTerritories();
+            yield return new WaitForSeconds(1);
+            //Distribuisco le carte obbiettivo
+            DistributeTargetCard();
+            yield return new WaitForSeconds(1);
+            //Inizializza le posizioni 
+            StartPositioning();
+        }
+
+        new void CreatePlayers()
+        {
 
             if (players.Count < PhotonNetwork.CurrentRoom.PlayerCount)
             {
-               
+
                 foreach (KeyValuePair<int, Player> player in PhotonNetwork.CurrentRoom.Players)
-                {                    
+                {
                     GameObject playerPrefabs = Instantiate(playerPrefab, transform, true);
                     PlayerController newPlayer = playerPrefabs.gameObject.GetComponent<PlayerController>();
                     newPlayer.GetPlayer().SetPlayerName(player.Value.NickName);
@@ -95,60 +134,23 @@ namespace com.xenturio.multiplayer
                     }
                     players.Add(newPlayer);
                 }
-                if (players.Count == PhotonNetwork.CurrentRoom.PlayerCount) {
+                if (players.Count == PhotonNetwork.CurrentRoom.PlayerCount)
+                {
                     SetReady();
                 }
             }
 
         }
 
-        private void SetReady() {
+        private void SetReady()
+        {
 
             int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.GAME_PLAYERS_LOADED];
             playersReady++;
             PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.GAME_PLAYERS_LOADED] = playersReady;
             PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
         }
-
-        public new void StartGame()
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {                               
-                if (players.Count > 0 && !gameStarted && GameStatesController.IsNotStartedGame())
-                {
-                    gameStarted = true;
-                    Debug.Log("Setup Match");
-                    SetupMatch();
-                }
-            }
-        }
-
-        #region SETUPGAME
-        protected new void SetupMatch()
-        {
-
-            StartCoroutine(RunSetupMatch());
-        }
-
-        IEnumerator RunSetupMatch() {
-            //Scelta dell'ordine dei giocatori random
-            Cmd_ShuffleData();           
-            //Seleziono il primo giocatore
-            Cmd_SetNextPlayer();
-            yield return new WaitForSeconds(1);
-            //Distribuisco le carte territorio
-            DistributeTerritories();
-            yield return new WaitForSeconds(1);
-            //Distribuisco le carte obbiettivo
-            DistributeTargetCard();
-            yield return new WaitForSeconds(1);
-            //Distribuisco le armate
-            DistributeArmies();
-            yield return new WaitForSeconds(1);
-            //Inizializza le posizioni 
-            StartPositioning();
-        }
-
+        
         protected new void PickUpPlayersOrder()
         {
             players.Shuffle();
@@ -165,16 +167,19 @@ namespace com.xenturio.multiplayer
             if (players != null && players.Count > 0)
             {
                 var playerIndex = 0;
+                ExitGames.Client.Photon.Hashtable territoriesOwners = new ExitGames.Client.Photon.Hashtable();
+                territories.Shuffle();
                 foreach (TerritoryController territory in territories)
                 {
                     if (playerIndex == players.Count)
                     {
                         playerIndex = 0;
                     }
-                    players[playerIndex].AddTerritory(territory.GetTerritory());
-                    territory.SetOwner(players[playerIndex]);
+                    SetTerritoryOwner(territory, players[playerIndex], false);
+                    territoriesOwners.Add(territory.Territory.GetTerritoryName(), players[playerIndex].Player.GetPlayerName());
                     playerIndex++;
                 }
+                Cmd_DistributeTerritories(territoriesOwners);
             }
         }
 
@@ -201,32 +206,45 @@ namespace com.xenturio.multiplayer
 
         protected new void DistributeArmies()
         {
+            if (players == null || players.Count == 0) { return; }
             int startArmies = 20 + ((6 - players.Count) * 5);
-            allStartArmies = startArmies * players.Count;
             foreach (PlayerController player in players)
             {
-                player.AddArmies(startArmies);
                 player.SetStartArmiesCount(startArmies - player.GetTerritoriesOwned().Count);
             }
         }
-        
+
         public new void StartPositioning()
         {
-            GameStatesController.StartGameState();
-            currentPlayerController.CalcReinforcmentArmies();
-            UpdateTerritoriesInfo();
+            DistributeArmies();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                GameStatesController.StartGameState();
+            }
+            if (currentPlayerController)
+            {
+                CalcReinforcmentArmies();
+                UpdateTerritoriesInfo();
+            }
         }
 
         #endregion
 
+        public void GetNextPlayer() {
+
+            string nextPlayer = NetworkCustomProperties.GetRoomProperty(NetworkCustomProperties.NEXT_PLAYER) as string;
+            this.currentPlayerController = getPlayerByName(nextPlayer);
+
+        }
+
         public new void SetNextPlayer()
         {
             string[] playersOrder = NetworkCustomProperties.GetRoomProperty(NetworkCustomProperties.PLAYERS_ORDER) as string[];
-
+            string nextPlayer = null;
             if (this.currentPlayerController == null && players.Count > 0)
             {
-                Debug.Log("SetNextPlayer");
                 this.currentPlayerController = getPlayerByName(playersOrder[0]);
+                nextPlayer = playersOrder[0];
             }
             else if (this.currentPlayerController != null)
             {
@@ -242,19 +260,86 @@ namespace com.xenturio.multiplayer
                 if (currentIndex == playersOrder.Length - 1)
                 {
                     this.currentPlayerController = getPlayerByName(playersOrder[0]);
+                    nextPlayer = playersOrder[0];
                 }
                 else
                 {
                     this.currentPlayerController = getPlayerByName(playersOrder[currentIndex + 1]);
+                    nextPlayer = playersOrder[currentIndex + 1];
+                }
+               
+            }
+            NetworkCustomProperties.AddRoomProperty(NetworkCustomProperties.NEXT_PLAYER, nextPlayer);
+        }
+
+        public new void EndPlayerTurn()
+        {
+            if (currentPlayerController && currentPlayerController.GetArmiesPerTurn() <= 0)
+            {
+                if (GameStatesController.IsMove())
+                {
+                    GameStatesController.NextState();
+                }
+                SetNextPlayer();
+                selectedTerritoy = null;
+                DestinationTerritory = null;
+                SelectedDefenderController = null;
+                if (!GameStatesController.IsNotStartedGame() && endTurnSound)
+                {
+                    endTurnSound.Play();
+                }
+                if (CheckToStartGame()) {
+                    GameStatesController.NextState();
                 }
             }
         }
 
-        protected new void StartAttack()
+        private void StartTurn()
         {
-            PhotonNetwork.LoadLevel(SceneEnum.BATTLEFIELD);
+            GetNextPlayer();
+            if (this.currentPlayerController)
+            {
+                CalcReinforcmentArmies();
+                selectedTerritoy = null;
+                DestinationTerritory = null;
+                SelectedDefenderController = null;
+                if (!GameStatesController.IsNotStartedGame() && endTurnSound)
+                {
+                    endTurnSound.Play();
+                }
+            }
         }
 
+        public new void SetTerritoryOwner(TerritoryController tc, PlayerController pc, bool sendEvent)
+        {
+            tc.SetOwner(pc);
+            pc.AddTerritory(tc.Territory);
+            if (sendEvent)
+            {
+                RaiseEvent(pc.GetPlayer().GetPlayerName(), EventNetwork.TERRITORY_SET_OWNER, tc.Territory.GetTerritoryName(), null, false);
+            }
+        }
+
+        public new void SetSelectedTerritory(TerritoryController territory)
+        {
+            this.selectedTerritoy = territory;
+            UpdateAttackMoveInfo();
+        }
+
+        public new void SetDesinationTerritory(TerritoryController territory)
+        {
+            this.destinationTerritory = territory;
+            this.selectedDefenderController = territory != null ? territory.GetOwnerController() : null;
+            UpdateAttackMoveInfo();
+        }
+
+        protected new void StartAttack()
+        {
+            battleFieldCanvas.gameObject.SetActive(true);
+            //PhotonNetwork.LoadLevel(SceneEnum.BATTLEFIELD);
+        }
+
+        #region HandleUI
         public new void HandleContinueButton()
         {
             if (!IsMyTurn()) { return; }
@@ -280,7 +365,7 @@ namespace com.xenturio.multiplayer
             if (GameStatesController.IsAttack())
             {
                 Cmd_SetDestination(destinationTerritory.GetOwnerController());
-                levelLoader.StartBattleField();
+                StartAttack();
             }
             else if (GameStatesController.IsMove())
             {
@@ -324,10 +409,70 @@ namespace com.xenturio.multiplayer
             levelLoader.LoadMainMenu();
         }
 
+        protected new void UpdateAttackMoveInfo()
+        {
+
+            if (GameStatesController.IsMoving())
+            {
+                if (!moveSlider || !attackMoveBtn) { return; }
+                moveSlider.gameObject.SetActive(true);
+                attackMoveBtn.gameObject.SetActive(true);
+                moveSlider.maxValue = selectedTerritoy.Territory.GetArmies() - 1;
+                if (attackMoveBtn.GetComponentInChildren<Text>())
+                {
+                    attackMoveBtn.GetComponentInChildren<Text>().text = "CONFIRM";
+                }
+                return;
+            }
+            if (GameStatesController.IsAttack() || GameStatesController.IsMove())
+            {
+                if (!selectedTerritoryText || !targetTerritoryText || !arrowFromTo || !attackMoveBtn) { return; }
+                if (selectedTerritoy != null)
+                {
+                    selectedTerritoryText.gameObject.SetActive(true);
+                    selectedTerritoryText.text = selectedTerritoy.GetTerritory().GetTerritoryName();
+                }
+                else
+                {
+                    selectedTerritoryText.gameObject.SetActive(false);
+                    targetTerritoryText.gameObject.SetActive(false);
+                    arrowFromTo.gameObject.SetActive(false);
+                    attackMoveBtn.gameObject.SetActive(false);
+                    return;
+                }
+                if (destinationTerritory != null)
+                {
+                    targetTerritoryText.gameObject.SetActive(true);
+                    targetTerritoryText.text = destinationTerritory.GetTerritory().GetTerritoryName();
+                    arrowFromTo.gameObject.SetActive(true);
+                    attackMoveBtn.gameObject.SetActive(true);
+                    if (attackMoveBtn.GetComponentInChildren<Text>())
+                    {
+                        attackMoveBtn.GetComponentInChildren<Text>().text = GameStatesController.IsAttack() ? "ATTACK" : "MOVE";
+                    }
+                }
+                else
+                {
+                    targetTerritoryText.gameObject.SetActive(false);
+                    arrowFromTo.gameObject.SetActive(false);
+                    attackMoveBtn.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                selectedTerritoryText.gameObject.SetActive(false);
+                targetTerritoryText.gameObject.SetActive(false);
+                arrowFromTo.gameObject.SetActive(false);
+                attackMoveBtn.gameObject.SetActive(false);
+            }
+
+        }
+        #endregion
         #region CMD EVENT
 
         public new void RaiseEvent(object data, byte code, object subject, ExitGames.Client.Photon.Hashtable evData, bool master)
         {
+            if (!PhotonNetwork.IsConnected) { return; }
             Debug.Log("Raise Event " + code);
             if (master || IsMyTurn())
             {
@@ -382,16 +527,20 @@ namespace com.xenturio.multiplayer
             RaiseEvent(null, EventNetwork.SET_MOVING_STATE, null, null, true);
         }
 
+        private void Cmd_DistributeTerritories(ExitGames.Client.Photon.Hashtable territoriesOwners)
+        {
+            RaiseEvent(null, EventNetwork.DISTRIBUTE_TERRITORIES, null, territoriesOwners, true);
+        }
+
         private void Cmd_SetDestination(PlayerController playerController)
         {
             Debug.Log("Cmd_SetDestination");
             this.selectedDefenderController = playerController;
-            ExitGames.Client.Photon.Hashtable evData = new ExitGames.Client.Photon.Hashtable();
-            evData.Add("DESTINATION", playerController);
-            RaiseEvent(null, EventNetwork.SET_DESTINATION, null, evData, true);
+            RaiseEvent(playerController.GetPlayer().GetPlayerName(), EventNetwork.SET_DESTINATION, this.currentPlayerController.Player.GetPlayerName(), null, false);
         }
 
-        private void Cmd_PlayersCreated() {
+        private void Cmd_PlayersCreated()
+        {
             Debug.Log("Cmd_PlayersCreated");
             RaiseEvent(null, EventNetwork.PLAYERS_CREATED, null, null, true);
         }
@@ -403,42 +552,48 @@ namespace com.xenturio.multiplayer
         private void NetworkingClient_EventReceived(EventData obj)
         {
             ExitGames.Client.Photon.Hashtable evData = obj.CustomData != null ? obj.CustomData as ExitGames.Client.Photon.Hashtable : null;
-            if(obj.Code < 200)
-            Debug.Log("Event received with code " + obj.Code+ " From : " + obj.Sender);
+            if (obj.Code < 200)
+            {
+                Debug.Log("Event received with code " + obj.Code + " From : " + obj.Sender);
+            }
             switch (obj.Code)
             {
-                case EventNetwork.PLAYERS_CREATED:
-                    CreatePlayers();
-                    break;
                 case EventNetwork.NEXT_STATE:
                     GameStatesController.OnChangeStateEvent(evData);
+                    if ((evData["STATE"] as string).Equals(GameStatesEnum.SETUPGAME)) {
+                        StartPositioning();
+                    }
                     break;
                 case EventNetwork.NEXT_PLAYER:
                     SetNextPlayer();
+                    break;
+                case EventNetwork.END_PLAYER_TURN:
+                    StartTurn();
                     break;
                 case EventNetwork.SET_MOVING_STATE:
                     SetMoving();
                     break;
                 case EventNetwork.SET_DESTINATION:
-                    this.selectedDefenderController = evData[0] as PlayerController;
+                    this.selectedDefenderController = players.Find(el => el.Player.GetPlayerName().Equals(evData["DATA"] as string));
                     break;
-                case EventNetwork.END_PLAYER_TURN:
-                    EndPlayerTurn();
+                case EventNetwork.SET_SELECTED_TERRITORY:
+                    TerritoryController selectedTerr = getTerritoryByName(evData["DATA"] as string);
+                    SetSelectedTerritory(selectedTerr);
                     break;
-                case EventNetwork.PLAYER_ADD_ARMY:
-                    PlayerController pcont = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
-                    if(pcont)
-                        pcont.AddArmies((int)evData["DATA"]);
+                case EventNetwork.SET_DESTINATION_TERRITORY:
+                    TerritoryController destinTerr = getTerritoryByName(evData["DATA"] as string);
+                    SetDesinationTerritory(destinTerr);
                     break;
-                case EventNetwork.PLAYER_LOST_ARMY:
-                    PlayerController pcont1 = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
-                    if (pcont1)
-                        pcont1.LostArmies((int)evData["DATA"]);
-                    break;
-                case EventNetwork.PLAYER_START_ARMIES_COUNT:
-                    PlayerController pcont4 = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
-                    if (pcont4)
-                        pcont4.SetStartArmiesCount((int)evData["DATA"]);
+                case EventNetwork.DISTRIBUTE_TERRITORIES:
+                    foreach (DictionaryEntry values in evData)
+                    {
+                        PlayerController owner = players.Find(el => el.Player.GetPlayerName().Equals(values.Value as string));
+                        TerritoryController territoryOwned = getTerritoryByName(values.Key as string);
+                        if (owner && territoryOwned)
+                        {
+                            SetTerritoryOwner(territoryOwned, owner, false);
+                        }
+                    }
                     break;
                 case EventNetwork.PLAYER_ADD_TERRITORY:
                     PlayerController pcont2 = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
@@ -452,6 +607,24 @@ namespace com.xenturio.multiplayer
                     if (pcont3 && terr1)
                         pcont3.LostTerritory(terr1.Territory);
                     break;
+                case EventNetwork.PLAYER_ADD_ARMY:
+                    PlayerController pcont = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
+                    if (pcont)
+                        pcont.AddArmies((int)evData["DATA"]);
+                    break;
+                case EventNetwork.PLAYER_LOST_ARMY:
+                    PlayerController pcont1 = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
+                    if (pcont1)
+                        pcont1.LostArmies((int)evData["DATA"]);
+                    break;
+                case EventNetwork.PLAYER_START_ARMIES_COUNT:
+                    PlayerController pcont4 = players.Find(el => el.Player.GetPlayerName().Equals(evData["SUBJECT"] as string));
+                    if (pcont4)
+                        pcont4.SetStartArmiesCount((int)evData["DATA"]);
+                    break;
+                case EventNetwork.PLAYERS_CREATED:
+                    CreatePlayers();
+                    break;
                 case EventNetwork.TERRITORY_SET_OWNER:
                     TerritoryController subject = getTerritoryByName(evData["SUBJECT"] as string);
                     PlayerController pcontt = players.Find(el => el.Player.GetPlayerName().Equals(evData["DATA"] as string));
@@ -460,7 +633,7 @@ namespace com.xenturio.multiplayer
                     break;
                 case EventNetwork.TERRITORY_ADD_ARMY:
                     TerritoryController subject1 = getTerritoryByName(evData["SUBJECT"] as string);
-                    if(subject1)
+                    if (subject1)
                         subject1.AddArmies((int)evData["DATA"]);
                     break;
                 case EventNetwork.TERRITORY_LOST_ARMY:
@@ -476,17 +649,12 @@ namespace com.xenturio.multiplayer
 
         public new bool IsMyTurn()
         {
-            Debug.Log("MyTurn ? " + PhotonNetwork.LocalPlayer.NickName + " / " + currentPlayerController.GetPlayer().GetPlayerName());
             return currentPlayerController != null && currentPlayerController.GetPlayer() != null && localPlayerText.text.Equals(currentPlayerController.GetPlayer().GetPlayerName());
         }
 
         private TerritoryController getTerritoryByName(string name)
         {
-            if (territoriesContainer == null) {
-                Debug.LogError("territoriesContainer è null...perchèèèèè cazzo -> " + name);
-                return null;
-            }
-            Debug.Log("Non è null bene -> " + name);
+            if (territoriesContainer == null) { return null; }
             foreach (TerritoryController tc in territoriesContainer.GetComponentsInChildren<TerritoryController>())
             {
                 if (tc.GetTerritory().GetTerritoryName().Equals(name))
@@ -502,7 +670,7 @@ namespace com.xenturio.multiplayer
             return players.Find(el => el.Player.GetPlayerName().Equals(name));
         }
         #endregion
-       
+
 
     }
 

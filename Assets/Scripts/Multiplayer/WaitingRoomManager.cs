@@ -16,6 +16,7 @@ namespace com.xenturio.multiplayer
         [SerializeField] Button startButton;
 
         private const string NO_PLAYER = "NO PLAYER";
+        private List<Dropdown.OptionData> optionDatasAvailable = new List<Dropdown.OptionData>();
         // Start is called before the first frame update
         void Start()
         {
@@ -26,6 +27,7 @@ namespace com.xenturio.multiplayer
             for (var ic = 0; ic < GameSettings.playerColors.Length; ic++)
             {
                 optionDatas.Insert(ic, new Dropdown.OptionData(GameUtils.GetColorName(GameSettings.playerColors[ic])));
+                optionDatasAvailable.Insert(ic, new Dropdown.OptionData(GameUtils.GetColorName(GameSettings.playerColors[ic])));
             }
             startButton.gameObject.SetActive(false);
             int i = 0;
@@ -40,7 +42,6 @@ namespace com.xenturio.multiplayer
                 {
                     HandleColor(null);
                 });
-                table.GetComponentInChildren<Text>().text = NO_PLAYER;
                 i++;
             }
             HandleColor(null);
@@ -53,18 +54,22 @@ namespace com.xenturio.multiplayer
             if (PhotonNetwork.CurrentRoom == null) { return; }
             foreach (KeyValuePair<int, Photon.Realtime.Player> player in PhotonNetwork.CurrentRoom.Players)
             {
-                if (playersTable[i].GetComponentInChildren<Text>().text.Equals(NO_PLAYER))
+                Debug.Log(playersTable[i].GetComponentInChildren<Text>().text);
+                if (string.Equals(playersTable[i].GetComponentInChildren<Text>().text, NO_PLAYER, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    playersTable[i].GetComponentInChildren<Text>().text = string.IsNullOrEmpty(player.Value.NickName) ? player.Value.UserId : player.Value.NickName;
+                    playersTable[i].GetComponentInChildren<Text>().text = player.Value.NickName;
                 }
                 if (player.Value.CustomProperties.ContainsKey(NetworkCustomProperties.PLAYER_COLOR))
                 {
-                    playersTable[i].GetComponentInChildren<Text>().color = GameSettings.playerColors[(int)player.Value.CustomProperties[NetworkCustomProperties.PLAYER_COLOR]];
+                    playersTable[i].GetComponentInChildren<Dropdown>().value = GetValueByColor(GameSettings.playerColors[(int)NetworkCustomProperties.GetPlayerProperty(player.Value, NetworkCustomProperties.PLAYER_COLOR)]);
                 }
-                playersTable[i].GetComponentInChildren<Dropdown>().name = player.Value.NickName;
+                if (player.Value.CustomProperties.ContainsKey(NetworkCustomProperties.PLAYER_IS_READY)) {
+                    playersTable[i].GetComponentInChildren<Toggle>().isOn = (bool) player.Value.CustomProperties[NetworkCustomProperties.PLAYER_IS_READY];
+                }
+                playersTable[i].GetComponentInChildren<Dropdown>().interactable = PhotonNetwork.IsMasterClient || PhotonNetwork.NickName.Equals(playersTable[i].GetComponentInChildren<Text>().text);                
                 i++;
             }
-            int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY];
+            int playersReady = (int) NetworkCustomProperties.GetRoomProperty(NetworkCustomProperties.ROOM_PLAYERS_READY);
             if (playersReady == PhotonNetwork.CurrentRoom.Players.Count)
             {
                 startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
@@ -75,21 +80,28 @@ namespace com.xenturio.multiplayer
             }
         }
 
+        private void UpdateDropdownValuesAvailable()
+        {
+            foreach (GameObject table in playersTable)
+            {
+
+            }
+        }
 
         public void HandleReadyButton()
         {
 
-            int playersReady = (int)PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY];
+            int playersReady = (int)NetworkCustomProperties.GetRoomProperty(NetworkCustomProperties.ROOM_PLAYERS_READY);
             if (readyButton.isOn)
             {
-                playersReady++;
+                playersReady++;               
             }
             else if (playersReady > 0)
             {
                 playersReady--;
             }
-            PhotonNetwork.CurrentRoom.CustomProperties[NetworkCustomProperties.ROOM_PLAYERS_READY] = playersReady;
-            PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
+            NetworkCustomProperties.AddPlayerProperty(NetworkCustomProperties.PLAYER_IS_READY, readyButton.isOn);
+            NetworkCustomProperties.AddRoomProperty(NetworkCustomProperties.ROOM_PLAYERS_READY, playersReady);
         }
 
         public void HandleColor(Dropdown change)
@@ -97,33 +109,7 @@ namespace com.xenturio.multiplayer
             int i = 0;
             foreach (KeyValuePair<int, Photon.Realtime.Player> player in PhotonNetwork.CurrentRoom.Players)
             {
-                Color color = Color.black;
-                //{ Color.black, /*Blue*/new Color32(0, 114, 255, 255), Color.green, Color.yellow, Color.red, new Color(226, 0, 225, 225) }
-                switch (playersTable[i].GetComponentInChildren<Dropdown>().value)
-                {
-                    case 0:
-                        color = Color.black;
-                        break;
-                    case 1:
-                        color = new Color32(0, 114, 255, 255);
-                        break;
-                    case 2:
-                        color = Color.green;
-                        break;
-                    case 3:
-                        color = Color.yellow;
-                        break;
-                    case 4:
-                        color = Color.red;
-                        break;
-                    case 5:
-                        color = new Color(226, 0, 225, 225);
-                        break;
-                    default:
-                        color = Color.black;
-                        break;
-
-                }
+                Color color = GetColorByValue(playersTable[i].GetComponentInChildren<Dropdown>().value);
                 i++;
                 int colorIndex = 0;
                 for (colorIndex = 0; colorIndex < GameSettings.playerColors.Length; colorIndex++)
@@ -133,20 +119,13 @@ namespace com.xenturio.multiplayer
                         break;
                     }
                 }
-                if (player.Value.CustomProperties.ContainsKey(NetworkCustomProperties.PLAYER_COLOR))
-                {
-                    player.Value.CustomProperties[NetworkCustomProperties.PLAYER_COLOR] = colorIndex;
-                }
-                else
-                {
-                    player.Value.CustomProperties.Add(NetworkCustomProperties.PLAYER_COLOR, colorIndex);
-                }
-                player.Value.SetCustomProperties(player.Value.CustomProperties);
+                NetworkCustomProperties.AddPlayerProperty(player.Value, NetworkCustomProperties.PLAYER_COLOR, colorIndex);
             }
         }
 
         public void StartPlay()
         {
+            PhotonNetwork.LogLevel = PunLogLevel.Full;
             PhotonNetwork.LoadLevel(SceneEnum.MULTIPLAYER_MAIN_GAME);
         }
 
@@ -175,5 +154,73 @@ namespace com.xenturio.multiplayer
             PhotonNetwork.Disconnect();
             FindObjectOfType<LevelLoader>().LoadMainMenu();
         }
+
+        private Color GetColorByValue(int value)
+        {
+
+            //{ Color.black, /*Blue*/new Color32(0, 114, 255, 255), Color.green, Color.yellow, Color.red, new Color(226, 0, 225, 225) }
+            Color color;
+            switch (value)
+            {
+                case 0:
+                    color = Color.black;
+                    break;
+                case 1:
+                    color = new Color32(0, 114, 255, 255);
+                    break;
+                case 2:
+                    color = Color.green;
+                    break;
+                case 3:
+                    color = Color.yellow;
+                    break;
+                case 4:
+                    color = Color.red;
+                    break;
+                case 5:
+                    color = new Color(226, 0, 225, 225);
+                    break;
+                default:
+                    color = Color.black;
+                    break;
+
+            }
+            return color;
+        }
+
+        private int GetValueByColor(Color color)
+        {
+
+            //{ Color.black, /*Blue*/new Color32(0, 114, 255, 255), Color.green, Color.yellow, Color.red, new Color(226, 0, 225, 225) }
+            int  value = 0;
+            if (color.Equals(Color.black)) {
+                value = 0;
+            }
+            if (color.Equals(new Color32(0, 114, 255, 255)))
+            {
+                value = 1;
+            }
+            if (color.Equals(Color.green))
+            {
+                value = 2;
+            }
+            if (color.Equals(Color.yellow))
+            {
+                value = 3;
+            }
+            if (color.Equals(Color.red))
+            {
+                value = 4;
+            }
+            if (color.Equals(new Color(226, 0, 225, 225)))
+            {
+                value = 5;
+            }
+
+            return value;
+        }
+
     }
+
+   
 }
